@@ -9,7 +9,7 @@ error_reporting(E_ALL & ~E_NOTICE);
   ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include("view/master/design.html");//header and design
+ign.html");//header and design
 if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   {?>
     <script type="text/javascript">

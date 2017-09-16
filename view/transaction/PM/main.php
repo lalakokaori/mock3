@@ -16,10 +16,10 @@
 
 
                             <button class="btn btn-primary btn-lg" onclick="window.location='../../transaction/steps/main_contract.php';">
-                              Create Project
+                              Create Contract
                             </button>
                             <div class="col-md-12">
-                              <h4 class="page-head-line">My Projects</h4>
+                              <h4 class="page-head-line">My Contracts</h4>
 
 
                         <div class="table-responsive">
@@ -27,10 +27,11 @@
                                 <thead>
                           <tr>
                           <th style="width: 1%">ID</th>
-                          <th style="width: 20%">Project Name</th>
-                          <th>Team Members</th>
-                          <th>Project Progress</th>
-                          <th>Schedule</th>
+                          <th style="width: 20%">Contract name</th>
+                          <th>Client</th>
+                          <th>Reference No.</th>
+                          <th>Contract Start</th>
+                          <th>Contract Amount</th>
                           <th style="width: 20%">#Action</th>
                         </tr>
                                 </thead>
