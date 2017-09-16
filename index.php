@@ -1,7 +1,6 @@
 <?php
-
-if(!isset($_SESSION))
-{ session_start(); }
+  if(!isset($_SESSION))
+  { session_start();}
 ini_set('display_errors',1);
 error_reporting(E_ALL & ~E_NOTICE);
 
@@ -9,7 +8,7 @@ error_reporting(E_ALL & ~E_NOTICE);
   ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-ign.html");//header and design
+<?php include("view/master/design.html");//header and design
 if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   {?>
     <script type="text/javascript">
@@ -26,7 +25,7 @@ window.location="view/master/login.php";
   });// alert("Please Log-in");
       }
 setTimeout('Redirect()', 0);
-
+      
     </script>
   <?php }
   else{
@@ -57,7 +56,7 @@ setTimeout('Redirect()', 0);
 
               <p><h1 style="font-family: 'Cinzel'; font-size: 65px ">PERSAN Construction Inc.</h1></p>
             </div>
-
+            
         </div>
     </div>
     <!-- HEADER END-->
@@ -203,6 +202,7 @@ setTimeout('Redirect()', 0);
             <!--notification end-->
 
             </div>
-<?php include("view/master/design_end.html"); //footer?>
+<?php include("view/master/design_end.html"); //footer?>  
 </body>
 </html>
+ 
