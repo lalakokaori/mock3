@@ -26,7 +26,7 @@ function populate_table_main(){
 
 	      table_main.fnAddData
 	      ([s[i][0],s[i][1],s[i][1]+'<a href="../steps/main_team.php?id='+s[i][1]+'" data-toggle="modal" class="btn btn-xs btn-primary" title="VIEW /Edit" > <i class="fa fa-eye"></i>Edit</a>',
-				s[i][1]+'<a href="../../../view/transaction/part/main.php?id='+s[i][1]+'" data-toggle="modal" class="btn btn-xs btn-primary" title="VIEW /Edit" > <i class="fa fa-eye"></i>edit</a>',s[i][1],
+				s[i][1]+'<a href="../../../view/transaction/part/main.php?id='+s[i][1]+'" data-toggle="modal" class="btn btn-xs btn-primary" title="VIEW /Edit" > <i class="fa fa-eye"></i>edit</a>',s[i][1],s[i][1],
 
 
 	        '<a href="../../../view/report/daily/main.php" data-toggle="modal" class="btn btn-xs btn-primary" title="VIEW /Edit" > <i class="fa fa-eye"></i>Daily</a>'+" "+
