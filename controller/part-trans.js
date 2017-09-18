@@ -36,12 +36,11 @@ if(table==1){
 					table_category.fnClearTable();
 					for(var i = 0; i < s.length; i++)
 						{
-							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_category.fnAddData
-							([s[i][1],s[i][2],s[i][3],
+							([s[i][0],s[i][1],s[i][2],s[i][3],
 
 
-				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
+				//'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
 				'<button data-toggle="tooltip" onclick="table_row_del(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete" id="del"> <i class="fa fa-trash"></i>Delete </button>',
 					],false);
 					table_category.fnDraw();
@@ -320,11 +319,12 @@ $('#btn_save').click(function(){
 if(validate_form(1)==true){}
 else{
 
-	var category =$('#f_type_cat').val();
-	var type =test;
+	var category =$('#modal_equip_type').val();
+	var id =test;
+	var type =$('#f_type_percent').val();
 
 
-	var dataString = 'category='+category+'&type='+ type;
+	var dataString = 'category='+category+'&type='+ type+'&id='+ id;
 
 
 
@@ -334,7 +334,7 @@ else{
 		//ajax now
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/subcat/create.php",
+			url: "../../../model/part-trans/create.php",
 			data: dataString,
 			dataType: 'json',
 			cache: false,
@@ -469,7 +469,7 @@ function populate_cat(selector){
 			  dataType: 'json',
 			  cache: false,
 			  success: function(s){
-			  		var c = $('#modal_equipment_type');
+			  		var c = $('#modal_equip_type');
 			        c.empty();
 			        c.html('<option selected="selected" value="none">-Part-</option>');
 			        for(var i = 0; i < s.length; i++) {

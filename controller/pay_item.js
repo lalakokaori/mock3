@@ -1,4 +1,5 @@
-	reset();
+ reset();
+	populate_part();
 	populate_table_main();
 	$('#btn_save').val('create');
 
@@ -13,7 +14,7 @@ function populate_table_main(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/project_edit/populate_table_main.php",
+	  url: "../../../model/PIN/populate_table_main.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
@@ -23,14 +24,12 @@ function populate_table_main(){
 	    for(var i = 0; i < s.length; i++)
 	    {
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
-
 	      table_main.fnAddData
-	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
+	      ([s[i][0],s[i][1],s[i][2],
 
 
-	      	'<a href="../../../view/transaction/steps/main.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Project</a>'+'   '+
-	      	'<a href="../../../view/transaction/part/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>set Schedule</a>'+'   '+
-	      	'<a href="../../../view/transaction/steps/main_team.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set team</a>'
+	        '<button data-toggle="tooltip" onclick="table_row_view(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
+	        '<button data-toggle="tooltip" onclick="table_row_del(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete"> <i class="fa fa-trash"></i>Delete </button>',
 	      ],false);
 	      table_main.fnDraw();
 
@@ -47,18 +46,15 @@ function table_row_view(id){
 		//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/project/fetch.php",
+	  url: "../../../model/PIN/fetch.php",
 	  data: 'id='+id,
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s){
 	  	$('#btn_save').val(id);
-	  	$('#f_ID').val(id);
-		$('#f_name').val(s[0][1]);
-	  	$('#f_cont').val(s[0][3]);
-	  	$('#f_add').val(s[0][4]);
-	  	$('#f_job').val(s[0][2]);
-	  	$('#f_email').val(s[0][5]);
+			$('#f_code').val(s[0][0]);
+	  	$('#f_part').val(s[0][1]);
+      $('#f_desc').val(s[0][2]);
 	  }
 	});
 	//ajax end
@@ -71,30 +67,28 @@ $('#btn_reset').click(function(){ reset(); tae();})
 function validate_form(){
 	err = false;
 
-	if($('#f_ID').val()==''){
+	if($('#f_code').val()==''){
 		err = true;
-		$('#f_ID_div').addClass('has-error');
+		$('#f_code_div').addClass('has-error');
 	}
 	else
-		$('#f_ID_div').removeClass('has-error');
-	if($('#f_name').val()==''){
+		$('#f_code_div').removeClass('has-error');
+
+	if($('#f_part').val()==''){
 		err = true;
-		$('#f_name_div').addClass('has-error');
+		$('#f_part_div').addClass('has-error');
 	}
 	else
-		$('#f_name_div').removeClass('has-error');
-	if($('#f_cont').val()==''){
-		err = true;
-		$('#f_cont_div').addClass('has-error');
-	}
-	else
-		$('#f_cont_div').removeClass('has-error');
-	if($('#f_email').val()==''){
-		err = true;
-		$('#f_email_div').addClass('has-error');
-	}
-	else
-		$('#f_email_div').removeClass('has-error');
+
+		$('#f_part_div').removeClass('has-error');
+
+	if($('#f_desc').val()=='none'){
+			err = true;
+			$('#f_desc_div').addClass('has-error');
+		}
+		else
+			$('#f_desc_div').removeClass('has-error');
+
 
 	return err;
 }
@@ -103,17 +97,13 @@ function validate_form(){
 function reset(){
 	$('#btn_save').val('create');
 	//tae('All fields of '+$('#f_job').val()+' has been cleared')
-	$('#f_ID').val('');
-	$('#f_name').val('');
-	$('#f_cont').val('');
-	$('#f_email').val('');
-	//$('#modal_user_type').
+	$('#f_code').val('');
+	$('#f_part').val('none');
+	$('#f_desc').val('');
 
-
-	$('#f_ID_div').removeClass('has-error');
-	$('#f_name_div').removeClass('has-error');
-	$('#f_cont_div').removeClass('has-error');
-	$('#f_email_div').removeClass('has-error');
+	$('#f_code_div').removeClass('has-error');
+	$('#f_part_div').removeClass('has-error');
+	$('#f_decs_div').removeClass('has-error');
 
 
 
@@ -160,7 +150,7 @@ function(isConfirm){
   	//ajax  start
   	$.ajax ({
 		type: "POST",
-		url: "../../../model/project/delete.php",
+		url: "../../../model/PIN/delete.php",
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
@@ -190,13 +180,10 @@ $('#btn_save').click(function(){
 	if(validate_form()==true){}
 	else{
 
-		var ID = $('#f_ID').val();
-		var name = $('#f_name').val();
-		var job = $('#f_job').val();
-		var contact = $('#f_cont').val();
-		var email = $('#f_email').val()
-		var address = $('#f_add').val();
-		var dataString = 'ID='+ID+'&name='+name+'&job='+job+"&email="+email+"&contact="+contact+"&address="+address;
+		var code = $('#f_code').val();
+		var part = $('#f_part').val();
+		var desc = $('#f_desc').val();
+		var dataString = 'code='+code+'&part='+part+'&desc='+desc;
 
 
 
@@ -207,7 +194,7 @@ $('#btn_save').click(function(){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/project/create.php",
+			  url: "../../../model/PIN/create.php",
 			  data: dataString,
 			  dataType: 'json',
 			  cache: false,
@@ -235,7 +222,7 @@ title: "Saved",
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/project/update.php",
+			  url: "../../../model/PIN/update.php",
 			  data: dataString+'&id='+id,
 			  dataType: 'json',
 			  cache: false,
@@ -261,3 +248,25 @@ title: "Updated",
 
 
 })
+
+function populate_part(selector){
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/PIN/populate_part.php",
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){
+			  		var c = $('#f_part');
+			        c.empty();
+			        c.html('<option selected="selected" value="none">--PART--</option>');
+			        for(var i = 0; i < s.length; i++) {
+			          let iselected = '';
+			          if(s[i][0] == selector){ iselected='selected' }
+			          c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
+			        }
+
+
+			  }
+			});
+		}
