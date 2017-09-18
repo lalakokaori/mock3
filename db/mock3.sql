@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2017 at 09:08 AM
--- Server version: 10.1.21-MariaDB
--- PHP Version: 5.6.30
+-- Generation Time: Sep 18, 2017 at 05:32 PM
+-- Server version: 10.1.25-MariaDB
+-- PHP Version: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -17,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `capstone_v6`
+-- Database: `mock3`
 --
 
 -- --------------------------------------------------------
@@ -257,8 +259,8 @@ CREATE TABLE `contract` (
   `contract_name` varchar(255) NOT NULL,
   `contract_refnum` varchar(50) NOT NULL,
   `contract_days` int(11) NOT NULL,
-  `contract_start` datetime NOT NULL,
-  `contract_period` datetime NOT NULL,
+  `contract_start` date NOT NULL,
+  `contract_period` date NOT NULL,
   `contract_amt` decimal(30,2) NOT NULL,
   `status` enum('ACTIVE','INACTIVE') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -268,7 +270,22 @@ CREATE TABLE `contract` (
 --
 
 INSERT INTO `contract` (`no`, `contract_id`, `emp_id`, `client_id`, `contract_name`, `contract_refnum`, `contract_days`, `contract_start`, `contract_period`, `contract_amt`, `status`) VALUES
-(1, 'contract beta', 'emp-0001', 'CLI-0006', 'beta', 'beta', 100, '2017-09-27 00:00:00', '2017-09-20 00:00:00', '10000.00', 'ACTIVE');
+(4, '12345', 'emp-0001', 'CLI-0010', '12345', '0005-12-31', 1234, '0005-12-31', '0005-12-31', '23456.00', 'ACTIVE'),
+(39, '123456700', 'emp-0001', 'CLI-0009', '67890', '2017-12-31', 6789, '2017-12-31', '2017-10-31', '999.00', 'ACTIVE'),
+(40, '12345670000', 'emp-0001', 'CLI-0008', '67890', '2017-12-31', 6789, '2017-12-31', '2017-10-31', '999.00', 'ACTIVE'),
+(55, 'bernie', 'emp-0002', 'CLI-0009', '1234567', 'lalakokaori', 23456, '0000-00-00', '0000-00-00', '23456.00', 'ACTIVE'),
+(41, 'beta', 'emp-0001', 'CLI-0011', 'beta', '0001-01-01', 0, '0001-01-01', '0001-01-01', '0.00', 'ACTIVE'),
+(1, 'contract beta', 'emp-0001', 'CLI-0006', 'beta', 'beta', 100, '2017-09-27', '2017-09-20', '10000.00', 'ACTIVE'),
+(45, 'emo metal', 'emp-0001', 'CLI-0009', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(50, 'emo metal18', 'emp-0001', 'CLI-0008', 'lalaokaori', 'lalakokaoris', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(51, 'emo metal19', 'emp-0001', 'CLI-0009', 'lalaokaori', 'lalakokaoris', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(49, 'emo metal2', 'emp-0001', 'CLI-0009', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(52, 'emo metal21', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaoris', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(54, 'emo metal22', 'emp-0001', 'CLI-0008', 'lalaokaori', 'luck', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(47, 'emo metal27', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(43, 'lalakokaori', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(34, 'qwertyQ', 'emp-0001', 'CLI-0008', '34567', '5678-12-31', 5, '5678-12-31', '0089-06-07', '234567.00', 'ACTIVE'),
+(38, 'qwertyuiop[', 'emp-0001', 'CLI-0010', 'qwertyui', '56789-03-04', 23456789, '0000-00-00', '0000-00-00', '34567.00', 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -376,7 +393,7 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`no`, `emp_id`, `name`, `position`, `address`, `contact`, `email`, `status`) VALUES
-(0001, 'emp-0001', 'Eunice Saus Beltran', 'Engineer', '', '', '', 'ACTIVE'),
+(0001, 'emp-0001', 'Eunice Saus Beltran', 'Engineer', 'er', 'er', 'er', 'ACTIVE'),
 (0002, 'emp-0002', 'Bernie Zabala Remollo', '', 'san juan', 'my no', 'b.z@r.com', 'ACTIVE');
 
 -- --------------------------------------------------------
@@ -761,6 +778,7 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`no`, `proj_id`, `contract_id`, `proj_name`, `proj_code`, `proj_location`, `award_date`, `ntp_date`, `start_date`, `target_date`, `status`) VALUES
+(0002, 'PJ0001', 'emo metal22', '12345', '12342345', '1234', '0078-05-06', '0000-00-00', '0005-12-31', '0789-05-06', 'ACTIVE'),
 (0001, 'proj beta', 'contract beta', 'beta', 'beta', 'beta', '2017-09-19', '2017-09-20', '2017-09-27', '2017-09-20', 'active');
 
 -- --------------------------------------------------------
@@ -1039,7 +1057,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`no`, `user_id`, `emp_id`, `user_name`, `user_pass`, `user_type`, `status`) VALUES
-(1, 'user-0001', 'emp-0001', 'belts', '21232f297a57a5a743894a0e4a801fc3', 'PROJECT ENGINEER', 'ACTIVE');
+(1, 'user-0001', 'emp-0001', 'belts', '21232f297a57a5a743894a0e4a801fc3', 'PROJECT ENGINEER', 'ACTIVE'),
+(2, 'user-0002', 'emp-0002', 'lalakokaori', '21232f297a57a5a743894a0e4a801fc3', 'ADMIN', 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -1593,7 +1612,7 @@ ALTER TABLE `consultant`
 -- AUTO_INCREMENT for table `contract`
 --
 ALTER TABLE `contract`
-  MODIFY `no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 --
 -- AUTO_INCREMENT for table `dailyacco`
 --
@@ -1713,7 +1732,7 @@ ALTER TABLE `problems`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `received`
 --
@@ -1778,7 +1797,7 @@ ALTER TABLE `subcontractor`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `visitors`
 --
@@ -2060,6 +2079,7 @@ ALTER TABLE `user`
 --
 ALTER TABLE `workacco`
   ADD CONSTRAINT `workacco_ibfk_1` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
