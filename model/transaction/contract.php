@@ -12,12 +12,12 @@
     $day=$_POST['day'];
     $amount=$_POST['amount'];
     $user=$_POST['user'];
-    $period=$_POST['period'];
+    //$period=$_POST['period'];
 
 
-    $sql = "INSERT INTO contract(contract_id,emp_id,client_id,contract_name,contract_refnum,contract_days,contract_start,contract_period,contract_amt,status) values(?,?,?,?,?,?,?,?,?,?)";
+    $sql = "INSERT INTO contract(contract_id,emp_id,client_id,contract_name,contract_refnum,contract_days,contract_start,contract_amt,status) values(?,?,?,?,?,?,?,?,?,?)";
   $q = $conn->prepare($sql);
-  $q -> execute(array($cont_id,$user,$client,$name,$ref,$day,$start,$period,$amount,'ACTIVE'));
+  $q -> execute(array($cont_id,$user,$client,$name,$ref,$day,$start,$amount,'ACTIVE'));
 
   $conn = null;
 
