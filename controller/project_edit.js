@@ -13,7 +13,7 @@ function populate_table_main(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/project/populate_table_main.php",
+	  url: "../../../model/project_edit/populate_table_main.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
