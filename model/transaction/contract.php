@@ -22,8 +22,8 @@
 
     $sql1 = "SELECT date(contract_start+contract_days) AS TARGET from contract WHERE contract_id=?";
     
-    $q1 = $conn->prepare($sql);
-    $q1 -> execute(array($cont_id,$user,$client,$name,$ref,$day,$start,$amount,'ACTIVE'));
+    $q1 = $conn->prepare($sql1);
+    $q1 -> execute(array($cont_id));
 $browse = $q1 -> fetchAll();
   foreach($browse as $fetch)
   {
