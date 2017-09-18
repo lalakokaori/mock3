@@ -62,10 +62,9 @@
           <input type="date" id="proj_award" required="required" class="form-control col-md-7 col-xs-12">
          <br><br></div>
        <div id="proj_target_div">
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="date-target">Target Date <span class="required">*</span>
+        <label class="control-label col-md-24 col-sm-12 col-xs-12"  for="date-target">Target Date <span class="required">*</span>
         </label>
-        <input type="date" id="date_target" required="required"  disable="disabled" class="form-control col-md-7 col-xs-12">
-
+        <input type="date" id="date_target" required="required" value='<?=$_SESSION["target"];?>' disabled="disabled" class="form-control col-md-7 col-xs-12">
      </div>
       </div>
   <input type="hidden" id="proj_name" required="required" value='<?=$_SESSION["name"];?>' class="form-control col-md-7 col-xs-12">

@@ -20,8 +20,19 @@
   $q = $conn->prepare($sql);
   $q -> execute(array($cont_id,$user,$client,$name,$ref,$day,$start,$amount,'ACTIVE'));
 
+    $sql1 = "SELECT date(contract_start+contract_days) AS TARGET from contract WHERE contract_id=?";
+    
+    $q1 = $conn->prepare($sql);
+    $q1 -> execute(array($cont_id,$user,$client,$name,$ref,$day,$start,$amount,'ACTIVE'));
+$browse = $q1 -> fetchAll();
+  foreach($browse as $fetch)
+  {
+     $_SESSION['target'] = $fetch['TARGET'];
+
+  }
   $conn = null;
 
   echo json_encode($output);
 
 ?>
+
