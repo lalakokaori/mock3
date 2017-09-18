@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 18, 2017 at 05:32 PM
+-- Generation Time: Sep 18, 2017 at 10:37 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -132,7 +132,11 @@ INSERT INTO `categories` (`no`, `category_id`, `category_name`, `description`, `
 (0008, 'CT0007', 'foreman', 'labor', 'ACTIVE'),
 (0010, 'CT0008', 'equipment 1', 'equipment', 'ACTIVE'),
 (0011, 'CT0010', 'Equipment', 'equipment', 'ACTIVE'),
-(0012, 'CT0011', '11', 'equipment', 'ACTIVE');
+(0012, 'CT0011', '11', 'equipment', 'ACTIVE'),
+(0013, 'CT0012', '1123', 'undefined', 'ACTIVE'),
+(0014, 'CT0013', 'undefined', '12', 'ACTIVE'),
+(0015, 'CT0014', '0000', '10', 'ACTIVE'),
+(0016, 'CT0015', 'PT0001', '12', 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -284,6 +288,7 @@ INSERT INTO `contract` (`no`, `contract_id`, `emp_id`, `client_id`, `contract_na
 (54, 'emo metal22', 'emp-0001', 'CLI-0008', 'lalaokaori', 'luck', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
 (47, 'emo metal27', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
 (43, 'lalakokaori', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(56, 'no_space', 'emp-0001', 'CLI-0008', 'no_space', 'no_space', 123, '0012-12-12', '0000-00-00', '12132.00', 'ACTIVE'),
 (34, 'qwertyQ', 'emp-0001', 'CLI-0008', '34567', '5678-12-31', 5, '5678-12-31', '0089-06-07', '234567.00', 'ACTIVE'),
 (38, 'qwertyuiop[', 'emp-0001', 'CLI-0010', 'qwertyui', '56789-03-04', 23456789, '0000-00-00', '0000-00-00', '34567.00', 'ACTIVE');
 
@@ -704,6 +709,28 @@ INSERT INTO `part` (`no`, `part_id`, `part_code`, `part_desc`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `part-trans`
+--
+
+CREATE TABLE `part-trans` (
+  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `part_id` varchar(50) NOT NULL,
+  `contract_id` varchar(20) NOT NULL,
+  `percent` decimal(10,2) NOT NULL,
+  `progress` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `part-trans`
+--
+
+INSERT INTO `part-trans` (`no`, `part_id`, `contract_id`, `percent`, `progress`) VALUES
+(0001, 'PT0001', 'contract beta', '10.00', '0.00'),
+(0003, 'PT0002', 'no_space', '10.00', '0.00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `pay_item`
 --
 
@@ -724,6 +751,22 @@ INSERT INTO `pay_item` (`no`, `part_id`, `pay_item_id`, `pay_item_code`, `descri
 (0001, '0000', '0000', '', '0000', 'inactive'),
 (0004, 'PT0002', 'PI0001', 'qwer', 'qwer', 'active'),
 (0005, 'PT0001', 'PI0004', '303', '11', 'active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pay_item-trans`
+--
+
+CREATE TABLE `pay_item-trans` (
+  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `part_id` varchar(50) NOT NULL,
+  `pay_item_id` varchar(50) NOT NULL,
+  `contract_id` varchar(20) NOT NULL,
+  `percent` decimal(10,2) NOT NULL,
+  `progress` decimal(10,2) NOT NULL,
+  `qty` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -779,6 +822,7 @@ CREATE TABLE `project` (
 
 INSERT INTO `project` (`no`, `proj_id`, `contract_id`, `proj_name`, `proj_code`, `proj_location`, `award_date`, `ntp_date`, `start_date`, `target_date`, `status`) VALUES
 (0002, 'PJ0001', 'emo metal22', '12345', '12342345', '1234', '0078-05-06', '0000-00-00', '0005-12-31', '0789-05-06', 'ACTIVE'),
+(0003, 'PJ0002', 'no_space', 'no_space', '123', '132', '0003-12-21', '0002-12-23', '0000-00-00', '0032-03-21', 'ACTIVE'),
 (0001, 'proj beta', 'contract beta', 'beta', 'beta', 'beta', '2017-09-19', '2017-09-20', '2017-09-27', '2017-09-20', 'active');
 
 -- --------------------------------------------------------
@@ -1395,12 +1439,29 @@ ALTER TABLE `part`
   ADD KEY `no` (`no`);
 
 --
+-- Indexes for table `part-trans`
+--
+ALTER TABLE `part-trans`
+  ADD UNIQUE KEY `no` (`no`),
+  ADD KEY `contract_id` (`contract_id`),
+  ADD KEY `part_id` (`part_id`);
+
+--
 -- Indexes for table `pay_item`
 --
 ALTER TABLE `pay_item`
   ADD PRIMARY KEY (`pay_item_id`),
   ADD KEY `no` (`no`),
   ADD KEY `FK_pay_item_part` (`part_id`);
+
+--
+-- Indexes for table `pay_item-trans`
+--
+ALTER TABLE `pay_item-trans`
+  ADD UNIQUE KEY `no` (`no`),
+  ADD KEY `contract_id` (`contract_id`),
+  ADD KEY `part_id` (`part_id`),
+  ADD KEY `pay_item_id` (`pay_item_id`);
 
 --
 -- Indexes for table `photos`
@@ -1592,7 +1653,7 @@ ALTER TABLE `audit`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `checkpoints`
 --
@@ -1612,7 +1673,7 @@ ALTER TABLE `consultant`
 -- AUTO_INCREMENT for table `contract`
 --
 ALTER TABLE `contract`
-  MODIFY `no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `dailyacco`
 --
@@ -1714,10 +1775,20 @@ ALTER TABLE `orientation`
 ALTER TABLE `part`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `part-trans`
+--
+ALTER TABLE `part-trans`
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
 -- AUTO_INCREMENT for table `pay_item`
 --
 ALTER TABLE `pay_item`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `pay_item-trans`
+--
+ALTER TABLE `pay_item-trans`
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `photos`
 --
@@ -1732,7 +1803,7 @@ ALTER TABLE `problems`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `received`
 --
@@ -1978,10 +2049,25 @@ ALTER TABLE `orientation`
   ADD CONSTRAINT `orientation_ibfk_2` FOREIGN KEY (`agenda_id`) REFERENCES `agenda` (`agenda_id`);
 
 --
+-- Constraints for table `part-trans`
+--
+ALTER TABLE `part-trans`
+  ADD CONSTRAINT `part-trans_ibfk_1` FOREIGN KEY (`contract_id`) REFERENCES `contract` (`contract_id`),
+  ADD CONSTRAINT `part-trans_ibfk_2` FOREIGN KEY (`part_id`) REFERENCES `part` (`part_id`);
+
+--
 -- Constraints for table `pay_item`
 --
 ALTER TABLE `pay_item`
   ADD CONSTRAINT `FK_pay_item_part` FOREIGN KEY (`part_id`) REFERENCES `part` (`part_id`);
+
+--
+-- Constraints for table `pay_item-trans`
+--
+ALTER TABLE `pay_item-trans`
+  ADD CONSTRAINT `pay_item-trans_ibfk_1` FOREIGN KEY (`contract_id`) REFERENCES `contract` (`contract_id`),
+  ADD CONSTRAINT `pay_item-trans_ibfk_2` FOREIGN KEY (`part_id`) REFERENCES `part-trans` (`part_id`),
+  ADD CONSTRAINT `pay_item-trans_ibfk_3` FOREIGN KEY (`pay_item_id`) REFERENCES `pay_item` (`pay_item_id`);
 
 --
 -- Constraints for table `photos`
