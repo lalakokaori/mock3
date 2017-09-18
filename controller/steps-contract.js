@@ -49,7 +49,7 @@ function(isConfirm){
 		var user =$('#user_id-hide').val();
 		var start =$('#cont_start').val();
 		var ref =$('#cont_ref').val();
-		var period =$('#cont_period').val();
+		//var period =$('#cont_period').val();
 
 
 		var dataString ='cont_id='+cont_id+'&client='+client+'&name='+name+'&day='+day+'&amount='+amount+'&user='+user+'&period='+period+'&ref='+ref+'&start='+start ;

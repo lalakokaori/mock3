@@ -1,5 +1,5 @@
 <?php
-      $conn = new PDO("mysql:host=localhost;dbname=id2521378_monitor;","id2521378_monitor","Piglet27");
+      $conn = new PDO("mysql:host=localhost;dbname=mock3;","root","");
 	  $conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 	  $conn->setAttribute(PDO::ATTR_EMULATE_PREPARES,false);
 
