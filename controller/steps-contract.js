@@ -52,7 +52,8 @@ function(isConfirm){
 		//var period =$('#cont_period').val();
 
 
-		var dataString ='cont_id='+cont_id+'&client='+client+'&name='+name+'&day='+day+'&amount='+amount+'&user='+user+'&period='+period+'&ref='+ref+'&start='+start ;
+		var dataString ='cont_id='+cont_id+'&client='+client+'&name='+name+'&day='+day+'&amount='+amount+'&user='+user+'&ref='+ref+'&start='+start ;
+		
 		console.log(dataString);
 
 		swal("", "Saved", "success");
@@ -64,7 +65,6 @@ function(isConfirm){
 			dataType: 'json',
 			cache: false,
 			success: function(s){
-				//alert("shit");
 				 window.location="main.php";
 			 }
 		});
