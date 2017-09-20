@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                <!--**********************************-->
-                                                <input type="hidden" class="form-control input-lg" id="f_id" value="<?=$_GET['contract']?>" required><label>hey</label>
+                                                <input type="hidden" class="form-control input-lg" id="f_id" value="<?=$_GET['contract']?>" required>
 
                             <div class="modal fade" id="cat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
@@ -159,7 +159,7 @@
     var test=$("#f_id").val();
 
 </script>
- <script src="../../../controller/part-trans.js" type="text/javascript"></script>
+ <script src="../../../controller/part_item-trans.js" type="text/javascript"></script>
 
 <?php include("../../../view/master/design_end.html");//?>
 

@@ -26,7 +26,7 @@ if(table==1){
 
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/part-trans/populate_table_part.php",
+			url: "../../../model/part_item-trans/populate_table_part.php",
 			data:"types="+test ,
 			dataType: 'json',
 			cache: false,
@@ -54,7 +54,7 @@ if(table==1){
 			{
 					$.ajax ({
 			type: "POST",
-			url: "../../../model/part-trans/populate_table_pay_item.php",
+			url: "../../../model/part_item-trans/populate_table_pay_item.php",
 			data:"types="+test ,
 			dataType: 'json',
 			cache: false,
@@ -334,7 +334,7 @@ else{
 		//ajax now
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/part-trans/create.php",
+			url: "../../../model/part_item-trans/create.php",
 			data: dataString,
 			dataType: 'json',
 			cache: false,
@@ -465,7 +465,7 @@ function populate_cat(selector){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/part-trans/populate_part.php",
+			  url: "../../../model/part_item-trans/populate_part.php",
 			  dataType: 'json',
 			  cache: false,
 			  success: function(s){

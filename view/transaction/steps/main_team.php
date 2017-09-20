@@ -19,62 +19,62 @@
             <h2 class="StepTitle">Project Team</h2>
             <p>
               <div id="client_div">
-              <label class="control-label col-md-24 col-sm-12 col-xs-12">Client</label>
+              <label class="control-label col-md-12 col-sm-12 col-xs-12">Client</label>
               <select id="client" class="form-control" required="">
               <option value="">Select..</option>
             </select>
 
           </div>
-              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="op-mgr">Operations Manager <span class="required">*</span>
+              <label class="control-label col-md-12 col-sm-12 col-xs-12" for="op-mgr">Operations Manager <span class="required">*</span>
               </label>
               <select id="client" class="form-control" required="">
               <option value="">Select..</option>
             </select>
             <br>
 
-            <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-engr">Project Engineer/Field Engineer <span class="required">*</span>
+            <label class="control-label col-md-12 col-sm-12 col-xs-12" for="proj-engr">Project Engineer/Field Engineer <span class="required">*</span>
             </label>
             <select id="client" class="form-control" required="">
             <option value="">Select..</option>
           </select>
           <br>
 
-           <label class="control-label col-md-24 col-sm-12 col-xs-12" for="mtrl-engr">Materials Engineer <span class="required">*</span>
+           <label class="control-label col-md-12 col-sm-12 col-xs-12" for="mtrl-engr">Materials Engineer <span class="required">*</span>
            </label>
            <select id="client" class="form-control" required="">
            <option value="">Select..</option>
          </select>
          <br>
 
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="foreman">Foreman <span class="required">*</span>
+          <label class="control-label col-md-12 col-sm-12 col-xs-12" for="foreman">Foreman <span class="required">*</span>
           </label>
           <select id="client" class="form-control" required="">
           <option value="">Select..</option>
         </select>
         <br>
 
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="wrh-in-charge">Warehouse-in-Charge <span class="required">*</span>
+          <label class="control-label col-md-12 col-sm-12 col-xs-12" for="wrh-in-charge">Warehouse-in-Charge <span class="required">*</span>
           </label>
           <select id="client" class="form-control" required="">
           <option value="">Select..</option>
         </select>
         <br>
 
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="eqpt-in-charge">Equipment-in-Charge <span class="required">*</span>
+          <label class="control-label col-md-12col-sm-12 col-xs-12" for="eqpt-in-charge">Equipment-in-Charge <span class="required">*</span>
           </label>
           <select id="client" class="form-control" required="">
           <option value="">Select..</option>
         </select>
         <br>
 
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="safety-officer">Safety Officer <span class="required">*</span>
+        <label class="control-label col-md-12 col-sm-12 col-xs-12" for="safety-officer">Safety Officer <span class="required">*</span>
         </label>
         <select id="client" class="form-control" required="">
         <option value="">Select..</option>
       </select>
       <br>
 
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="timekeeper">Timekeeper <span class="required">*</span>
+        <label class="control-label col-md-12 col-sm-12 col-xs-12" for="timekeeper">Timekeeper <span class="required">*</span>
         </label>
         <select id="client" class="form-control" required="">
         <option value="">Select..</option>
