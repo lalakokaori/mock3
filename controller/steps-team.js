@@ -9,7 +9,7 @@ populate_emp("#Timekeeper");
 
 
 
-function saves()
+function saves1()
 {
 
 swal({
@@ -26,15 +26,16 @@ swal({
 function(isConfirm){
   if (isConfirm) {
 
-		var name =$('#proj_name').val();
-		var code =$('#proj_code').val();
-		var location =$('#proj_location').val();
-		var award =$('#proj_award').val();
-		var target =$('#date_target').val();
-		var ntp =$('#proj_ntp').val();
-		var start =$('#proj_start').val();
+		var om =$('#OM').val();
+		var pi =$('#PI').val();
+		var mat =$('#Materials').val();
+		var Foreman =$('#Foreman').val();
+		var Warehouse =$('#Warehouse').val();
+		var EIC =$('#Equipment-in-Charge').val();
+		var Safety =$('#Safety').val();
+		var time =$('#Timekeeper').val();
 
-		var dataString ='name='+name+'&code='+code+'&location='+location+'&award='+award+'&target='+target+'&ntp='+ntp+'&start='+start;
+		var dataString ='om='+om+'&pi='+pi+'&mat='+mat+'&Foreman='+Foreman+'&Warehouse='+Warehouse+'&EIC='+EIC+'&Safety='+Safety+'&time='+time;
 		console.log(dataString);
 
 		swal("", "Saved", "success");
@@ -47,6 +48,7 @@ function(isConfirm){
 			cache: false,
 			success: function(s){
 				//alert("shit");
+debugger;				
 				window.location="../../../view/transaction/PM/main.php";
 //				 window.location="main.php";
 			 }
