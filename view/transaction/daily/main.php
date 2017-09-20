@@ -13,27 +13,7 @@
                 <div class="col-md-12">
                     <h4 class="page-head-line">DAILY ACCOMPLISHMENT REPORT</h4>
                         <div class="panel-body">
-
-<div class="row">
-                    <div class="col-md-6 col-lg-12">
-                        <div class="panel panel-default">
-                        <div class="panel-heading">
-<div class="wrapper">
-      
-      <!-- Right side column. Contains the navbar and content of the page -->
-      <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-           Report
-            <small>DAILY ACCOMPLISHMENT REPORT</small>
-          </h1>                              
-        </section>
-
-
-        <!-- Main content -->
-        <section class="content">
-          <div class="row">
+                          <div class="row">
                         <div class="col-sm-1 col-xs-2">                        
                           <h4 class="box-title" style="margin-left:13px">
                                <a href="#" onclick="return confirmCancel()" role="button" data-toggle='tooltip' title="Cancel" data-placement='bottom' class="btn text-red"
@@ -55,6 +35,27 @@
                         
 
                       </div>
+
+<div class="row">
+                    <div class="col-md-6 col-lg-12">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+<div class="wrapper">
+      
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Report
+            <small>DAILY ACCOMPLISHMENT REPORT</small>
+          </h1>                              
+        </section>
+
+
+        <!-- Main content -->
+        <section class="content">
+          
          
 
           <div class="row" >              
