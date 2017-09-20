@@ -9,7 +9,7 @@ populate_emp("#Timekeeper");
 
 
 
-function saves()
+function saves1()
 {
 
 swal({
@@ -35,8 +35,12 @@ function(isConfirm){
 		var Safety =$('#Safety').val();
 		var time =$('#Timekeeper').val();
 
+<<<<<<< HEAD
 		var dataString ='om='+om+'&pi='+pi+'&mat='+mat+'&Foreman='+Foreman+'&Warehouse='+Warehouse+'&EIC='+EIC+'&Safety='+Safety+'&time='+time
 		;
+=======
+		var dataString ='om='+om+'&pi='+pi+'&mat='+mat+'&Foreman='+Foreman+'&Warehouse='+Warehouse+'&EIC='+EIC+'&Safety='+Safety+'&time='+time;
+>>>>>>> mobile
 		console.log(dataString);
 
 		swal("", "Saved", "success");
@@ -49,6 +53,7 @@ function(isConfirm){
 			cache: false,
 			success: function(s){
 				//alert("shit");
+debugger;				
 				window.location="../../../view/transaction/PM/main.php";
 //				 window.location="main.php";
 			 }
