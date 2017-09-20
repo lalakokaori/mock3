@@ -11,37 +11,7 @@
                 <!--**********************************-->
             <div class="row" style="padding-top: 25px;">
                 <div class="col-md-12">
-<<<<<<< HEAD
-                    <h4 class="page-head-line">Contract</h4>
-=======
-                    <h4 class="page-head-line">DAILY ACCOMPLISHMENT REPORT</h4>
->>>>>>> bb011c4b92dfb47bca6dff77c947faba64f36333
-                        <div class="panel-body">
-<div class="row">
-                    <div class="col-md-6 col-xs-12">
-                        <div class="panel panel-default">
-                        <div class="panel-heading">
 
-<<<<<<< HEAD
-                        </div>
-                        <div class="panel-body">
-
-              </div>
-              </div>
-              </div><!--//
-window.location='../../transaction/steps/main.php
-                2nd panel body-->
-
-              </div>
-              </div>
-              </div><!--//first panel body-->
-
-              </div>
-
-   <script src="../../../controller/steps-contract.js" type="text/javascript"></script>
-<?php include("../../../view/master/design_end.html");//?>
-
-=======
 <div class="row">
                     <div class="col-md-6 col-lg-12">
                         <div class="panel panel-default">
