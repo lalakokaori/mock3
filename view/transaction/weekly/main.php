@@ -15,6 +15,28 @@
                         <div class="panel-body">
 
 <div class="row">
+  <div class="row">
+                        <div class="col-sm-1 col-xs-2">                        
+                          <h4 class="box-title" style="margin-left:13px">
+                               <a href="#" onclick="return confirmCancel()" role="button" data-toggle='tooltip' title="Cancel" data-placement='bottom' class="btn text-red"
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white"> <i class="ion-android-close"></i> </a>                               
+                          </h4>     
+                        </div> 
+
+                        <div class="col-sm-1 col-xs-2">
+                          <h4 class="box-title">
+                               <button role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white; " disabled > <i class="ion-android-done"></i> </button>                               
+                          </h4>                             
+                        </div>      
+                                           
+                        <div class="col-xs-6"></div> <!--empty space-->
+
+                        
+
+                      </div>
                     <div class="col-md-6 col-lg-12">
                         <div class="panel panel-default">
                         <div class="panel-heading">
