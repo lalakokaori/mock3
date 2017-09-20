@@ -63,21 +63,7 @@
                 <div class="box-header">     
                   <div class="row" style="margin-top:25px">
 
-<<<<<<< HEAD
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Project Name :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
-                    <div class="col-md-3 col-xs-12" id="transdateDiv">
-=======
-                    
-                    <div class="col-md-3 col-xs-12" >
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
+a5fb6c88487494a0570e361c9e9764dde6939613
                       <label id="transdateErr" ><font color="darkred">*</font>Order Date :</label>    
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -135,19 +121,7 @@
 
                   <div class="row" style="margin-top:25px">
 
-<<<<<<< HEAD
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Activities :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-=======
-                    <div class="col-md-3 col-xs-12">
-                      <label id="custnameErr" ><font color="darkred">*</font>Weather :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon">AM</i></span>
-                       <input type="number" placeholder=" Search Name ">
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
+a5fb6c88487494a0570e361c9e9764dde6939613
                       </div>    
                      
                       <div class="input-group" style="margin-top:3px">
@@ -156,46 +130,7 @@
                       </div>  
                     </div> <!-- /.col-->  <!--Customer Field-->
 
-<<<<<<< HEAD
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Station :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
-                    <div class="col-md-3 col-xs-12" id="clerkDiv">
-                      <label id="clerkErr"  ><font color="darkred">*</font>Volume :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="clerk" type="text" name="clerk" onblur="checkClerk(this.value)" onfocus="checkClerk(this.value)"  class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkClerk" value='no-match'>
-                    </div> <!-- /.col-->  <!--Customer Field-->                 
-=======
-                    <div class="col-md-3 col-xs-12" >
-                      <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>    
-                      <div class="input-group" style="margin-top:3px">
-                       
-                        <input type="radio"> Yes
-                        <br>
-                        <input type="radio"> No
-                      </div>    
-                    </div> <!-- /.col-->  
-
-                             
-
-                    
-
-                                   
-                  </div><!--/.row-->
-
-                  <div class="row" style="margin-top:25px">
-
-                    
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
+a5fb6c88487494a0570e361c9e9764dde6939613
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
@@ -225,22 +160,7 @@
                   </div> <!-- /. col --> 
                   </div>
 
-<<<<<<< HEAD
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Manpower :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>   
-                      <div class="input-group" style="margin-top:3px">
-                     
-                       
-                      </div>    
-
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div> <!-- /.col-->  <!--Customer Field-->
-=======
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
+ a5fb6c88487494a0570e361c9e9764dde6939613
 
                   <div class="row" style="margin-top:25px">
 
@@ -275,49 +195,7 @@
                      
                     </div> <!-- /.col-->  <!--Customer Field-->           
 
-<<<<<<< HEAD
-                     <div class="row" style="margin-top:25px">
-
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Materials/Lubricants/Fuel Used :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Quantity :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div> <!-- /.col-->  <!--Customer Field-->
-
-                    <div class="col-md-3 col-xs-12" id="clerkDiv">
-                      <label id="clerkErr"  ><font color="darkred">*</font>Equipment Used :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="clerk" type="text" name="clerk" onblur="checkClerk(this.value)" onfocus="checkClerk(this.value)"  class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkClerk" value='no-match'>
-                    </div> <!-- /.col-->  <!--Customer Field-->       
-
-                    <div class="col-md-3 col-xs-12" id="clerkDiv">
-                      <label id="clerkErr"  ><font color="darkred">*</font>Utilization :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="clerk" type="text" name="clerk" onblur="checkClerk(this.value)" onfocus="checkClerk(this.value)"  class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkClerk" value='no-match'>
-                    </div> <!-- /.col-->  <!--Customer Field-->           
-=======
-                   <div class="row" style="margin-top:25px">
-
-                  
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
+a5fb6c88487494a0570e361c9e9764dde6939613
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
@@ -328,74 +206,7 @@
                         </div>    
                   </div><!--/.row-->
                   <div class="row" style="margin-top:25px">
-<<<<<<< HEAD
-
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Materials/Equipments/Documents Received</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>   
-                      <div class="input-group" style="margin-top:3px">
-                     
-                       
-                      </div>    
-
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div> <!-- /.col-->  <!--Customer Field-->
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Quantity :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"></span>
-                       <input id="custname" type="number" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>   
-                      <div class="input-group" style="margin-top:3px">
-                     
-                       
-                      </div>    
-
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div>
-                     <div class="col-sm-1 col-xs-2">
-
-                      <div class="row" style="margin-top:25px">
-                    <div class="container">
-  <div class="row">
-    <input type="hidden" name="count" value="1" />
-        <div class="control-group" id="fields">
-           
-            <div class="controls" id="profs"> 
-                <form class="input-append">
-                    <div id="field"><input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="sample add" data-items="8"/><button id="b1" class="btn add-more" type="button" style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
-                               text-align: center; font-size:25px; background-color:white; ">+</button></div>
-                </form>
-            <br>
-          
-            </div>
-        </div>
-  </div>
-=======
-                  <div class="col-lg-10 col-xs-12">
-                          <table id="bTable" class="table table-condensed table-bordered table-hover table-striped" >
-                            <thead>
-                              <th  style="width:550px">Materials/Equipment/Documents Received</th>
-                              <th  style="width:180px">Quantity</th>    
-                                               
-                            </thead>
-                            <tbody>
-                              <tr > <td></td> <td></td></tr>
-                             
-                            </tbody>
-                            
-                            <tbody></tbody>            
-                          </table> 
-                  </div> <!-- /. col --> 
-                  </div>
-                     
-                    </div> <!-- /.col-->  <!--Customer Field-->           
-
-                  
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
+ a5fb6c88487494a0570e361c9e9764dde6939613
 </div>
 </div>
 </div>
@@ -424,15 +235,7 @@
                   <div class="row"  style="margin-top:25px" id="pickupDiv">
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Prepared by :</label>
-<<<<<<< HEAD
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-=======
-                     <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input type="text" placeholder=" Search Name " disabled=""> 
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
+a5fb6c88487494a0570e361c9e9764dde6939613
                       </div>   
                       <div class="input-group" style="margin-top:3px">
                      
@@ -488,10 +291,6 @@ window.location='../../transaction/steps/main.php
       </div>
    <script src="../../../controller/steps-add.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
-<<<<<<< HEAD
-=======
-
->>>>>>> a5fb6c88487494a0570e361c9e9764dde6939613
 </body>
 </html>
 
