@@ -58,12 +58,11 @@
                             <table id="table_submain" class="table table-striped table-bordered table-hover" >
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Part</th>
-                                        <th>Name</th>
-                                        <th>%</th>
-                                        <th></th>
-                                        <th></th>
+                                        <th>Contract ID</th>
+                                        <th>Project Name</th>
+                                        <th>Team</th>
+                                        <th>Reports</th>
+
 
                                     </tr>
                                 </thead>

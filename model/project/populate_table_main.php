@@ -9,7 +9,7 @@
 
   foreach($browse as $fetch)
   {
-    $output[] = array ($fetch['contract_id'],$fetch['proj_name']);
+    $output[] = array ($fetch['contract_id'],$fetch['proj_name'],);
 
     //contract view
   }

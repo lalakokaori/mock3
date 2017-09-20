@@ -1,10 +1,15 @@
 	reset();
 	populate_table_main();
+	populate_table_sub();
 	$('#btn_save').val('create');
 
 
 
   var table_main = $('#table_main').dataTable({
+    "aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
+    "aaSorting": []
+  });  //Initialize the datatable
+  var table_sub = $('#table_submain').dataTable({
     "aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
     "aaSorting": []
   });  //Initialize the datatable
@@ -29,10 +34,41 @@ function populate_table_main(){
 
 
 	      	'<a href="../../../view/transaction/steps/main.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Project</a>'+'   '+
-	      	'<a href="../../../view/transaction/part-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>set Schedule</a>'+'   '+
+	      	'<a href="../../../view/transaction/part_item-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>set Schedule</a>'+'   '+
 	      	'<a href="../../../view/transaction/steps/main_team.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set team</a>'
 	      ],false);
 	      table_main.fnDraw();
+
+	    }
+	  }
+	});
+	//ajax end
+} //
+
+function populate_table_sub(){
+	//ajax now
+	$.ajax ({
+	  type: "POST",
+	  url: "../../../model/project/populate_table_main.php",
+	  dataType: 'json',
+	  cache: false,
+	  success: function(s)
+	  {
+      	// console.log(s)
+	    table_sub.fnClearTable();
+	    for(var i = 0; i < s.length; i++)
+	    {
+	    	//if(s[i][2]=='inactive'){enability='disabled'}
+
+	      table_sub.fnAddData
+	      ([s[i][0],s[i][1],s[i][1],
+
+
+	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>'+'   '+
+	      	'<a href="../../../view/transaction/part-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
+	      	'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>'
+	      ],false);
+	      table_sub.fnDraw();
 
 	    }
 	  }

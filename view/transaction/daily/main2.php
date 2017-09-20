@@ -3,22 +3,6 @@ ini_set('display_errors',1);
 error_reporting(E_ALL & ~E_NOTICE);
 
 
-  if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
-  {?>
-    <script type="text/javascript">
-      function Redirect()
-      {
-        window.location="view/master/login.php";
-       // alert("Please Log-in");
-      }
-      Redirect();
-    </script>
-  <?php }
-  else{
-  $persan_user_name = $_SESSION["persan_user_name"];
-  $persan_user_type = $_SESSION["persan_user_type"];
-  echo'<input type="hidden" id="persan_user_type" value="'.$persan_user_type.'">';
-  }
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
