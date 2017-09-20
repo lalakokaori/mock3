@@ -55,7 +55,7 @@
                     </div>
                     <div class="tab-pane fade" id="sub-pills"><br/>
                     <div class="table-responsive">
-                            <table id="table_subcategory" class="table table-striped table-bordered table-hover" >
+                            <table id="table_submain" class="table table-striped table-bordered table-hover" >
                                 <thead>
                                     <tr>
                                         <th>ID</th>

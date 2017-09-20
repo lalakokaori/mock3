@@ -1,3 +1,13 @@
+populate_emp("#OM");
+populate_emp("#PI");
+populate_emp("#Materials");
+populate_emp("#Foreman");
+populate_emp("#Warehouse");
+populate_emp("#Equipment-in-Charge");
+populate_emp("#Safety");
+populate_emp("#Timekeeper");
+
+
 
 function saves()
 {
@@ -50,3 +60,24 @@ function(isConfirm){
 });
 
 }
+
+function populate_emp(selector){
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/employee/populate_table_main.php",
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){
+			  		var c = $(selector);
+			        c.empty();
+			        c.html('<option selected="selected" value="none">--Employee--</option>');
+			        for(var i = 0; i < s.length; i++) {
+			        c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
+			        }
+
+
+			  }
+			});
+		}
+
