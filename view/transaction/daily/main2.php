@@ -1,31 +1,24 @@
-<?php
-ini_set('display_errors',1);
-error_reporting(E_ALL & ~E_NOTICE);
-
-
-?>
+<?php include('../../../controller/master/log.php');?>
+<!---->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <?php include("../../../view/master/design.html");//header and design ?>
+
+
 <body>
-
-
+<div class="se-pre-con"></div>
 <?php include("../../../view/master/design_sidebar.php");//header and design ?>
-
-<!--**********************************-->
-                   <div class="row" style="padding-top: 25px;">
+                <!--**********************************-->
+            <div class="row" style="padding-top: 25px;">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Daily Accomplishment Report</h4>
-                    </div>
-                    </div>
-
-                    </div>
-            </div>
-
-
-
-
-            <div class="row">
+                    <h4 class="page-head-line">Contract</h4>
+                        <div class="panel-body">
+<div class="row">
+                    <div class="col-md-6 col-lg-12">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+                          <div class="row">
               <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
 
@@ -95,9 +88,24 @@ error_reporting(E_ALL & ~E_NOTICE);
                                     </div>
 
                                 </div>
+
                                  <button type="submit" class="btn btn-primary">+</button>
                             </div>
-
+    <div class="container">
+    <div class="row">
+                              <input type="hidden" name="count" value="1" />
+                                <div class="control-group" id="fields">
+           
+                              <div class="controls" id="profs"> 
+                 <form class="input-append">
+                               <div id="field"><input autocomplete="off" class="input" id="field1" name="prof1" type="text" placeholder="Type something" data-items="8"/><button id="b1" class="btn add-more" type="button">+</button></div>
+                </form>
+            <br>
+          
+            </div>
+        </div>
+  </div>
+</div>
                             <h3>Weather</h3>
 
                       &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
@@ -290,13 +298,55 @@ error_reporting(E_ALL & ~E_NOTICE);
                 </div>
               </div>
             </div>
-          </div>
-        </div>
+                        </div>
+                        <div class="panel-body">
 
+              </div>
+              </div>
+              </div><!--//
+window.location='../../transaction/steps/main.php
+                2nd panel body-->
 
+              </div>
+              </div>
+              </div><!--//first panel body-->
+
+              </div>
+
+   <script src="../../../controller/steps-contract.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
 
 </body>
 </html>
 
-<!---->
+<script type="text/javascript">
+$(document).ready(function(){
+    var next = 1;
+    $(".add-more").click(function(e){
+        e.preventDefault();
+        var addto = "#field" + next;
+        var addRemove = "#field" + (next);
+        next = next + 1;
+        var newIn = '<input autocomplete="off" class="input form-control" id="field' + next + '" name="field' + next + '" type="text">';
+        var newInput = $(newIn);
+        var removeBtn = '<button id="remove' + (next - 1) + '" class="btn btn-danger remove-me" style="margin-bottom:20px;">-</button></div><div id="field">';
+        var removeButton = $(removeBtn);
+        $(addto).after(newInput);
+        $(addRemove).after(removeButton);
+        $("#field" + next).attr('data-source',$(addto).attr('data-source'));
+        $("#count").val(next);  
+        
+            $('.remove-me').click(function(e){
+                e.preventDefault();
+                var fieldNum = this.id.charAt(this.id.length-1);
+                var fieldID = "#field" + fieldNum;
+                $(this).remove();
+                $(fieldID).remove();
+            });
+    });
+    
+
+    
+});
+
+</script>

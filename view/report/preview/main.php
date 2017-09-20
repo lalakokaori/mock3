@@ -20,11 +20,15 @@
                             </button>
                             <td width="200"><a target="_blank" href="export.php" class="btn btn-danger">Daily</a></td>
                             <td width="200"><a target="_blank" href="export2.php" class="btn btn-primary">Monthly</a></td>
-                            <td width="200"><a target="_blank" href="export3.php" class="btn btn-primary">Work</a></td>
+                            <td width="200"><a target="_blank" href="export3.php" class="btn btn-danger">Work</a></td>
                             <td width="200"><a target="_blank" href="export4.php" class="btn btn-primary">Work Sched</a></td>
-                            <td width="200"><a target="_blank" href="export5.php" class="btn btn-primary">Project Info</a></td>
+                            <td width="200"><a target="_blank" href="export5.php" class="btn btn-danger">Project Info</a></td>
                             <td width="200"><a target="_blank" href="export6.php" class="btn btn-primary">Safety</a></td>
-                            <td width="200"><a target="_blank" href="export7.php" class="btn btn-primary">Photograph</a></td>
+                            <td width="200"><a target="_blank" href="export7.php" class="btn btn-danger">Photograph</a></td>
+                            <td width="200"><a target="_blank" href="export8.php" class="btn btn-success">Completion</a></td>
+                            <td width="200"><a target="_blank" href="export9.php" class="btn btn-danger">Customer</a></td>
+                            <td width="200"><a target="_blank" href="export10.php" class="btn btn-success">Turnover</a></td>
+                            <td width="200"><a target="_blank" href="export11.php" class="btn btn-danger">Weekly</a></td>
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
