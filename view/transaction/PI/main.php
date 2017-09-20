@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-    <script src="../../../controller/project_edit.js" type="text/javascript"></script>
+    <script src="../../../controller/project.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
 
 </body>

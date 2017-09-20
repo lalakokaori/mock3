@@ -1,222 +1,193 @@
-<?php include('../../../controller/master/log.php');
+<?php
+ini_set('display_errors',1);
+error_reporting(E_ALL & ~E_NOTICE);
 
 
+  if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
+  {?>
+    <script type="text/javascript">
+      function Redirect()
+      {
+        window.location="view/master/login.php";
+       // alert("Please Log-in");
+      }
+      Redirect();
+    </script>
+  <?php }
+  else{
+  $persan_user_name = $_SESSION["persan_user_name"];
+  $persan_user_type = $_SESSION["persan_user_type"];
+  echo'<input type="hidden" id="persan_user_type" value="'.$persan_user_type.'">';
+  }
 ?>
-<style type="text/css">
-    no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url(../../../assets/img/2.gif) center no-repeat #fff;
-}
-</style>
-
-<!---->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>Bidding System with Monitoring Projects System </title>
-    <!-- BOOTSTRAP CORE STYLE -->
-    <link href="../../../assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME ICONS  -->
-    <link href="../../../assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
-    <link href="../../../assets/css/style.css" rel="stylesheet" />
-     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-<script src="../../../plugins/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../../plugins/sweetalert/dist/sweetalert.css">
-     <!--JQUERY BELOW-->
-    <script src="../../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!--Datatables BELOW-->
-    <script src="../../../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-    <!--Datatables Bootsrap CSS BELOW -->
-    <script src="../../../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
-    <!--Datatables Javascript BELLOW -->
-    <link href="../../../plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
-
-    <script src="../../../controller/master/logout.js" type="text/javascript"></script>
-    
-</head>
+<?php include("../../../view/master/design.html");//header and design ?>
 <body>
-<div class="se-pre-con"></div>
-    <!-- HEADER END-->
-    <div class="navbar navbar-inverse set-radius-zero" style="background-image:url(../../../assets/img/red.jpg); height:200px;">
-        <div class="container">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="index.php">
-
-                    <img src="../../../assets/img/logo.png" style="weight:135px; height:120px" />
 
 
-                </a>
-
-            </div>
-            <div style=" text-align: center; font-size:60pt;
-    
-    color:#FFFFFF;">
-             <p>&nbsp;</p>
-              <p><h1 style="font-family: 'Cinzel'; font-size: 75px ">PERSAN Construction Inc.</h1></p>
-            </div>
-            <div class="left-div">
-                <div class="user-settings-wrapper">
-                    <ul class="nav">
-
-
-
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- LOGO HEADER END-->
-    <section class="menu-section">
-        <div class="container">
-            <div class="row">
-                    <?php include("../../../view/master/sidebar1.php"); ?>
-
-
-            </div>
-        </div>
-    </section>
-    <!-- MENU SECTION END-->
-  <!--  <div class="content-wrapper">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h4 class="page-head-line">EQUIPMENT</h4>
-
-                </div>
-
-            </div>
-            <div class="row">-->
+<?php include("../../../view/master/design_sidebar.php");//header and design ?>
 
 <!--**********************************-->
-<div class="row" style="padding-top: 25px;">
-                <div class="col-md-12" >
-                    <h4 class="page-head-line">Equipment</h4>
-
-
-                        <div class="panel-body">
-
-                            
-                            <button onclick="window.location.href='project/main.php'" class="btn btn-primary btn-lg">
-                              Project Name
-                            </button>
-                            <button onclick="window.location.href='equipment/main.php'" class="btn btn-primary btn-lg">
-                              Materials 
-                            </button>
-                            <button onclick="window.location.href='documents/main.php'" class="btn btn-primary btn-lg">
-                              Documents 
-                            </button>
-            </div>
-                </div>
-
-                    <div class="panel panel-default">
-                        
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">DAILY REPORT FORM</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                           <?php include('main_form.html'); ?>
-                                        </div>
-                                        <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
-                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
-                                        <div class="modal-footer">
-
-
-                                        </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                     <!-- End Modals-->
-<!--**********************************-->
-
-
-            </div>
-
-            <div class="row">
-
-
-              <!--   EQUIPMENT POPULATE TABLE -->
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table id="table_main" class="table table-striped table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                 <!-- End EQUIPMENT POPULATE TABLE -->
-</div>
-    <footer>
-        <div class="container">
-            <div class="row">
+                   <div class="row" style="padding-top: 25px;">
                 <div class="col-md-12">
-                    &copy; 2017 Persan Construction Inc. | By : Students of Polytechnic University of San Juan Campus
-                </div>
+                    <h4 class="page-head-line">Monthly Accomplishment Report</h4>
+                    </div>
+                    </div>
 
+                    </div>
             </div>
-        </div>
-    </footer>
-    <!-- FOOTER SECTION END-->
-    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="../../../assets/js/bootstrap.js"></script>
 
 
 
-    <script src="../../../controller/equipments.js" type="text/javascript"></script>
+
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+
+                  <div class="x_content">
+
+                    <form class="form-horizontal form-label-left" novalidate>
 
 
-<script type="text/javascript">
-    $(window).load(function() {
-        // Animate loader off screen
-        $(".se-pre-con").fadeOut("slow");
-    });
-</script>
+
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Project Name <span class="required">*</span>
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <!--  <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="select"> -->
+                        <select id="heard" class="form-control" required="">
+                          <option selected="selected" value="none">-Select Project Name-</option>
+                        </select>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Project Code <span class="required">*</span>
+                        </label>
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                        <!--  <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="select"> -->
+                        <select id="heard" class="form-control" required="">
+                          <option selected="selected" value="none">-Select Project Code-</option>
+                        </select>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="day">Project Location <span class="required"></span>
+                        </label>
+                        <div class="col-md-4 col-sm-3 col-xs-12">
+                          <input type="text" id="day" name="day" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="day">Agency/Client Name <span class="required"></span>
+                        </label>
+                        <div class="col-md-4 col-sm-3 col-xs-12">
+                          <input type="text" id="day" name="day" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date">Contract Period <span class="required"></span>
+                        </label>
+                        <div class="col-md-4 col-sm-3 col-xs-12">
+                          <input type="date" id="date" name="date" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date">Accomplishment Cut-off Date <span class="required"></span>
+                        </label>
+                        <div class="col-md-4 col-sm-3 col-xs-12">
+                          <input type="date" id="date" name="date" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date">Start Date <span class="required"></span>
+                        </label>
+                        <div class="col-md-4 col-sm-3 col-xs-12">
+                          <input type="date" id="date" name="date" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+
+                      </div>
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="date">Target Completion Date <span class="required"></span>
+                        </label>
+                        <div class="col-md-4 col-sm-3 col-xs-12">
+                          <input type="date" id="date" name="date" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Activities Accomplished for the Month: <span class="required"></span>
+                        </label>
+
+                        <div class="col-xs-3 col-sm-3 col-xs-6">
+                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Problems Encountered: <span class="required"></span>
+                        </label>
+
+                        <div class="col-xs-3 col-sm-3 col-xs-6">
+                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Actions Taken: <span class="required"></span>
+                        </label>
+
+                        <div class="col-xs-3 col-sm-3 col-xs-6">
+                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Major Activites Next Month: <span class="required"></span>
+                        </label>
+
+                        <div class="col-xs-3 col-sm-3 col-xs-6">
+                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Materials Needed: <span class="required"></span>
+                        </label>
+
+                        <div class="col-xs-3 col-sm-3 col-xs-6">
+                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+
+                      <div class="item form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Remarks: <span class="required"></span>
+                        </label>
+
+                        <div class="col-xs-3 col-sm-3 col-xs-6">
+                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
+                        </div>
+                      </div>
+
+
+                       <div class="ln_solid"></div>
+                      <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                          <button type="submit" class="btn btn-primary">Cancel</button>
+                          <button id="send" type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                      </div>
+
+
+<?php include("../../../view/master/design_end.html");//?>
+
 </body>
 </html>
 

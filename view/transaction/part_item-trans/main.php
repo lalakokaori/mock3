@@ -1,6 +1,7 @@
 <?php include('../../../controller/master/log.php');
 
 ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php include("../../../view/master/design.html");//header and design ?>
@@ -14,6 +15,7 @@
         <div class="container">
             <div class="row">
                <!--**********************************-->
+                                                <input type="hidden" class="form-control input-lg" id="f_id" value="<?=$_GET['contract']?>" required>
 
                             <div class="modal fade" id="cat" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
@@ -29,9 +31,9 @@
                                                 </select>
 
                                             </div>
-                                            <div class="col-sm-5 col-xs-10" id="f_type_cat_div" class='form-group'>
-                                                <label><font color="darkred">*</font>Amount</label> <!-- MODEL -->
-                                                <input type="text" class="form-control input-lg" id="f_type_cat" required>
+                                            <div class="col-sm-5 col-xs-10" id="f_type_percent_div" class='form-group'>
+                                                <label><font color="darkred">*</font>Percent</label> <!-- MODEL -->
+                                                <input type="text" class="form-control input-lg" id="f_type_percent" required>
 
                                             </div>
                                         </div>
@@ -111,8 +113,8 @@
 
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>%</th>
-                                        <th></th>
+                                        <th>Percent%</th>
+                                        <th>progress</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -154,10 +156,10 @@
 </div>
 
 <script type="text/javascript">
-    var test=$("#type").val();
+    var test=$("#f_id").val();
 
 </script>
- <script src="../../../controller/part-trans.js" type="text/javascript"></script>
+ <script src="../../../controller/part_item-trans.js" type="text/javascript"></script>
 
 <?php include("../../../view/master/design_end.html");//?>
 

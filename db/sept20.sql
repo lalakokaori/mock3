@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 12, 2017 at 09:08 AM
+-- Generation Time: Sep 20, 2017 at 03:34 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `capstone_v6`
+-- Database: `sept20`
 --
 
 -- --------------------------------------------------------
@@ -48,33 +48,6 @@ CREATE TABLE `activities` (
   `qty` int(11) NOT NULL,
   `status` enum('ACTIVE','INACTIVE') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `agenda`
---
-
-CREATE TABLE `agenda` (
-  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
-  `agenda_id` varchar(20) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `agenda`
---
-
-INSERT INTO `agenda` (`no`, `agenda_id`, `description`, `status`) VALUES
-(0001, 'AG-0001', 'Project Information Sheet', 'ACTIVE'),
-(0002, 'AG-0002', 'Introduction of Project Team Members', 'ACTIVE'),
-(0003, 'AG-0003', 'Discussion of Project Schedule', 'ACTIVE'),
-(0004, 'AG-0004', 'Report Submission Schedule/Inspection Schedule', 'ACTIVE'),
-(0005, 'AG-0005', 'Quality Policy', 'ACTIVE'),
-(0006, 'AG-0006', 'Safety/Environmental Guidelines', 'ACTIVE'),
-(0007, 'AG-0007', 'House Rules', 'ACTIVE'),
-(0008, 'AG-0008', 'Use of Forms', 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -130,67 +103,11 @@ INSERT INTO `categories` (`no`, `category_id`, `category_name`, `description`, `
 (0008, 'CT0007', 'foreman', 'labor', 'ACTIVE'),
 (0010, 'CT0008', 'equipment 1', 'equipment', 'ACTIVE'),
 (0011, 'CT0010', 'Equipment', 'equipment', 'ACTIVE'),
-(0012, 'CT0011', '11', 'equipment', 'ACTIVE');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `checkpoints`
---
-
-CREATE TABLE `checkpoints` (
-  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
-  `checkpoints_id` varchar(20) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `checkpoints`
---
-
-INSERT INTO `checkpoints` (`no`, `checkpoints_id`, `description`, `status`) VALUES
-(0001, '1', 'Project Information Sheet', 'ACTIVE'),
-(0010, '10', 'Safety and Health Program', 'ACTIVE'),
-(0011, '11', 'Quality Control Program', 'ACTIVE'),
-(0012, '12', 'Complete Project Team', 'ACTIVE'),
-(0013, '13', 'All needed project workers', 'ACTIVE'),
-(0014, '14', 'Heavy and Light Equipment', 'ACTIVE'),
-(0015, '15', 'Tools', 'ACTIVE'),
-(0016, '16', 'Subcontractors', 'ACTIVE'),
-(0017, '17', 'Suppliers', 'ACTIVE'),
-(0018, '18', 'Consultants', 'ACTIVE'),
-(0019, '19', 'Materials Needed for the temporary facilities', 'ACTIVE'),
-(0002, '2', 'Notice to Proceed (NTP)', 'ACTIVE'),
-(0020, '20', 'Planning and Construction of Temporary Facilities', 'ACTIVE'),
-(0021, '21', 'Location of the Temporary Facilities has been cleared', 'ACTIVE'),
-(0022, '22', 'Field Office', 'ACTIVE'),
-(0023, '23', 'Warehouse', 'ACTIVE'),
-(0024, '24', 'Motorpool', 'ACTIVE'),
-(0025, '25', 'Bunk house/Locker Room', 'ACTIVE'),
-(0026, '26', 'Toilet and Bathroom', 'ACTIVE'),
-(0027, '27', 'Kitchen, Dining, Washing Area', 'ACTIVE'),
-(0028, '28', 'Drinking Water Supply', 'ACTIVE'),
-(0029, '29', 'Water and Power Supply', 'ACTIVE'),
-(0003, '3', 'Contract Agreement', 'ACTIVE'),
-(0030, '30', 'Fire Extinguishers', 'ACTIVE'),
-(0031, '31', 'Material Safety Data Sheets', 'ACTIVE'),
-(0032, '32', 'Safety Signs and Barricades', 'ACTIVE'),
-(0033, '33', 'First Aid Kit', 'ACTIVE'),
-(0034, '34', 'Personal Protective Equipment', 'ACTIVE'),
-(0035, '35', 'Project Implementation', 'ACTIVE'),
-(0036, '36', 'Purchasing', 'ACTIVE'),
-(0037, '37', 'Warehousing', 'ACTIVE'),
-(0038, '38', 'Equipment/Facilities Maintenance', 'ACTIVE'),
-(0039, '39', 'Document and Records Control', 'ACTIVE'),
-(0004, '4', 'Performance Bond', 'ACTIVE'),
-(0040, '40', 'Pre-construction Orientation', 'ACTIVE'),
-(0041, '41', 'Courtesy call to the local government', 'ACTIVE'),
-(0005, '5', 'Project Specifications/Drawings', 'ACTIVE'),
-(0006, '6', 'Construction Schedule', 'ACTIVE'),
-(0007, '7', 'Manpower Utilization Schedule', 'ACTIVE'),
-(0008, '8', 'Equipment Utilization Schedule', 'ACTIVE'),
-(0009, '9', 'Materials Quantity Take-off', 'ACTIVE');
+(0012, 'CT0011', '11', 'equipment', 'ACTIVE'),
+(0013, 'CT0012', '1123', 'undefined', 'ACTIVE'),
+(0014, 'CT0013', 'undefined', '12', 'ACTIVE'),
+(0015, 'CT0014', '0000', '10', 'ACTIVE'),
+(0016, 'CT0015', 'PT0001', '12', 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -257,8 +174,8 @@ CREATE TABLE `contract` (
   `contract_name` varchar(255) NOT NULL,
   `contract_refnum` varchar(50) NOT NULL,
   `contract_days` int(11) NOT NULL,
-  `contract_start` datetime NOT NULL,
-  `contract_period` datetime NOT NULL,
+  `contract_start` date NOT NULL,
+  `contract_period` date NOT NULL,
   `contract_amt` decimal(30,2) NOT NULL,
   `status` enum('ACTIVE','INACTIVE') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -268,7 +185,23 @@ CREATE TABLE `contract` (
 --
 
 INSERT INTO `contract` (`no`, `contract_id`, `emp_id`, `client_id`, `contract_name`, `contract_refnum`, `contract_days`, `contract_start`, `contract_period`, `contract_amt`, `status`) VALUES
-(1, 'contract beta', 'emp-0001', 'CLI-0006', 'beta', 'beta', 100, '2017-09-27 00:00:00', '2017-09-20 00:00:00', '10000.00', 'ACTIVE');
+(4, '12345', 'emp-0001', 'CLI-0010', '12345', '0005-12-31', 1234, '0005-12-31', '0005-12-31', '23456.00', 'ACTIVE'),
+(39, '123456700', 'emp-0001', 'CLI-0009', '67890', '2017-12-31', 6789, '2017-12-31', '2017-10-31', '999.00', 'ACTIVE'),
+(40, '12345670000', 'emp-0001', 'CLI-0008', '67890', '2017-12-31', 6789, '2017-12-31', '2017-10-31', '999.00', 'ACTIVE'),
+(55, 'bernie', 'emp-0002', 'CLI-0009', '1234567', 'lalakokaori', 23456, '0000-00-00', '0000-00-00', '23456.00', 'ACTIVE'),
+(41, 'beta', 'emp-0001', 'CLI-0011', 'beta', '0001-01-01', 0, '0001-01-01', '0001-01-01', '0.00', 'ACTIVE'),
+(1, 'contract beta', 'emp-0001', 'CLI-0006', 'beta', 'beta', 100, '2017-09-27', '2017-09-20', '10000.00', 'ACTIVE'),
+(45, 'emo metal', 'emp-0001', 'CLI-0009', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(50, 'emo metal18', 'emp-0001', 'CLI-0008', 'lalaokaori', 'lalakokaoris', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(51, 'emo metal19', 'emp-0001', 'CLI-0009', 'lalaokaori', 'lalakokaoris', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(49, 'emo metal2', 'emp-0001', 'CLI-0009', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(52, 'emo metal21', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaoris', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(54, 'emo metal22', 'emp-0001', 'CLI-0008', 'lalaokaori', 'luck', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(47, 'emo metal27', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(43, 'lalakokaori', 'emp-0001', 'CLI-0011', 'lalaokaori', 'lalakokaori', 0, '0001-01-01', '0001-01-01', '10000000000.00', 'ACTIVE'),
+(56, 'no_space', 'emp-0001', 'CLI-0008', 'no_space', 'no_space', 123, '0012-12-12', '0000-00-00', '12132.00', 'ACTIVE'),
+(34, 'qwertyQ', 'emp-0001', 'CLI-0008', '34567', '5678-12-31', 5, '5678-12-31', '0089-06-07', '234567.00', 'ACTIVE'),
+(38, 'qwertyuiop[', 'emp-0001', 'CLI-0010', 'qwertyui', '56789-03-04', 23456789, '0000-00-00', '0000-00-00', '34567.00', 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -376,7 +309,7 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`no`, `emp_id`, `name`, `position`, `address`, `contact`, `email`, `status`) VALUES
-(0001, 'emp-0001', 'Eunice Saus Beltran', 'Engineer', '', '', '', 'ACTIVE'),
+(0001, 'emp-0001', 'Eunice Saus Beltran', 'Engineer', 'er', 'er', 'er', 'ACTIVE'),
 (0002, 'emp-0002', 'Bernie Zabala Remollo', '', 'san juan', 'my no', 'b.z@r.com', 'ACTIVE');
 
 -- --------------------------------------------------------
@@ -554,22 +487,6 @@ CREATE TABLE `matreq` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mobilization`
---
-
-CREATE TABLE `mobilization` (
-  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
-  `mobi_id` varchar(20) NOT NULL,
-  `proj_id` varchar(100) NOT NULL,
-  `checkpoints_id` varchar(100) NOT NULL,
-  `remarks_id` varchar(20) NOT NULL,
-  `timesubmitted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `monthlyacco`
 --
 
@@ -647,23 +564,6 @@ CREATE TABLE `monthlysched` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orientation`
---
-
-CREATE TABLE `orientation` (
-  `no` int(10) UNSIGNED ZEROFILL NOT NULL,
-  `orient_id` varchar(20) NOT NULL,
-  `proj_id` varchar(100) NOT NULL,
-  `agenda_id` varchar(100) NOT NULL,
-  `emp_id` varchar(100) NOT NULL,
-  `date_conducted` datetime NOT NULL,
-  `attendees_id` varchar(100) NOT NULL,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `part`
 --
 
@@ -683,6 +583,28 @@ INSERT INTO `part` (`no`, `part_id`, `part_code`, `part_desc`, `status`) VALUES
 (0001, '0000', '', '0000', 'INACTIVE'),
 (0002, 'PT0001', 'qwe', 'qwe', 'ACTIVE'),
 (0003, 'PT0002', 'qwer', 'qwer', 'ACTIVE');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `part-trans`
+--
+
+CREATE TABLE `part-trans` (
+  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `part_id` varchar(50) NOT NULL,
+  `contract_id` varchar(20) NOT NULL,
+  `percent` decimal(10,2) NOT NULL,
+  `progress` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `part-trans`
+--
+
+INSERT INTO `part-trans` (`no`, `part_id`, `contract_id`, `percent`, `progress`) VALUES
+(0001, 'PT0001', 'contract beta', '10.00', '0.00'),
+(0003, 'PT0002', 'no_space', '10.00', '0.00');
 
 -- --------------------------------------------------------
 
@@ -711,17 +633,26 @@ INSERT INTO `pay_item` (`no`, `part_id`, `pay_item_id`, `pay_item_code`, `descri
 -- --------------------------------------------------------
 
 --
--- Table structure for table `photos`
+-- Table structure for table `pay_item-trans`
 --
 
-CREATE TABLE `photos` (
+CREATE TABLE `pay_item-trans` (
   `no` int(4) UNSIGNED ZEROFILL NOT NULL,
-  `photo_id` varchar(20) NOT NULL,
-  `proj_id` varchar(20) NOT NULL,
-  `period_covered` datetime NOT NULL,
-  `photo` longblob NOT NULL,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
+  `part_id` varchar(50) NOT NULL,
+  `pay_item_id` varchar(50) NOT NULL,
+  `contract_id` varchar(20) NOT NULL,
+  `percent` decimal(10,2) NOT NULL,
+  `progress` decimal(10,2) NOT NULL,
+  `qty` decimal(10,2) NOT NULL,
+  `status` varchar(10) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pay_item-trans`
+--
+
+INSERT INTO `pay_item-trans` (`no`, `part_id`, `pay_item_id`, `contract_id`, `percent`, `progress`, `qty`, `status`) VALUES
+(0001, 'PT0001', 'PI0001', 'bernie', '10.00', '0.00', '1000.00', 'active');
 
 -- --------------------------------------------------------
 
@@ -761,7 +692,30 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`no`, `proj_id`, `contract_id`, `proj_name`, `proj_code`, `proj_location`, `award_date`, `ntp_date`, `start_date`, `target_date`, `status`) VALUES
+(0002, 'PJ0001', 'emo metal22', '12345', '12342345', '1234', '0078-05-06', '0000-00-00', '0005-12-31', '0789-05-06', 'ACTIVE'),
+(0003, 'PJ0002', 'no_space', 'no_space', '123', '132', '0003-12-21', '0002-12-23', '0000-00-00', '0032-03-21', 'ACTIVE'),
 (0001, 'proj beta', 'contract beta', 'beta', 'beta', 'beta', '2017-09-19', '2017-09-20', '2017-09-27', '2017-09-20', 'active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `proj_team`
+--
+
+CREATE TABLE `proj_team` (
+  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
+  `team_id` varchar(100) NOT NULL,
+  `proj_id` varchar(20) NOT NULL,
+  `opt_mgr` varchar(255) NOT NULL,
+  `field_engr` varchar(255) NOT NULL,
+  `mtrls_engr` varchar(255) NOT NULL,
+  `foreman` varchar(255) NOT NULL,
+  `wrh_incharge` varchar(255) NOT NULL,
+  `eqpt_incharge` varchar(255) NOT NULL,
+  `safety_officer` varchar(255) NOT NULL,
+  `timekeeper` varchar(255) NOT NULL,
+  `status` enum('ACTIVE','INACTIVE','','') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -852,95 +806,6 @@ CREATE TABLE `reports` (
   `assigned_to` varchar(30) NOT NULL COMMENT 'user_id',
   `submitted_to` varchar(30) NOT NULL,
   `frequency` enum('DAILY','WEEKLY','MONTHLY') NOT NULL,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `safetychecklist`
---
-
-CREATE TABLE `safetychecklist` (
-  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
-  `safetychecklist_id` varchar(20) NOT NULL,
-  `proj_id` varchar(50) DEFAULT NULL,
-  `description` varchar(255) NOT NULL,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `safetychecklist`
---
-
-INSERT INTO `safetychecklist` (`no`, `safetychecklist_id`, `proj_id`, `description`, `status`) VALUES
-(0001, '1', NULL, 'Office trailer with power, secure site location and neat?', 'ACTIVE'),
-(0010, '10', NULL, 'Office equipment ( telephone, fax machine, copier, etc. )', 'ACTIVE'),
-(0011, '11', NULL, 'Office furnishings ( desk, chair\'s, filing cabinet, print table, etc. )', 'ACTIVE'),
-(0012, '12', NULL, 'Permits/licenses/Certificate of Insurance', 'ACTIVE'),
-(0013, '13', NULL, 'Nail, boards, debris removed?', 'ACTIVE'),
-(0014, '14', NULL, 'Regular disposal of wastes? Waste containers provided?', 'ACTIVE'),
-(0015, '15', NULL, 'Warnings signs and safety signs complete and posted?', 'ACTIVE'),
-(0016, '16', NULL, 'Hazard lights utilized?', 'ACTIVE'),
-(0017, '17', NULL, 'Delivery address and unloading point for material.', 'ACTIVE'),
-(0018, '18', NULL, 'Safety needs ( please check first aid kits, medical facilities location)', 'ACTIVE'),
-(0019, '19', NULL, 'Open ditches, drop offs protected? Ladders lowered?', 'ACTIVE'),
-(0002, '2', NULL, 'Storage trailer(s) or Warehouse, secure site location and neat?', 'ACTIVE'),
-(0020, '20', NULL, 'MSDS for received hazardous wastes? Control/disposal established?', 'ACTIVE'),
-(0021, '21', NULL, 'Fire extinguishers available and inspected?', 'ACTIVE'),
-(0022, '22', NULL, 'Flammable liquids in secure container/storage?', 'ACTIVE'),
-(0023, '23', NULL, 'Established equipment fueling method (turn off/grounded)?', 'ACTIVE'),
-(0024, '24', NULL, 'PPEs adequate and utilized? (face, head, eye, hand, foot protection)?', 'ACTIVE'),
-(0025, '25', NULL, 'Safety orientations conducted to all employees', 'ACTIVE'),
-(0026, '26', NULL, 'Equipment had undergone preventive maintenance?', 'ACTIVE'),
-(0027, '27', NULL, 'Materials properly stored/stacked? Inventories updated?', 'ACTIVE'),
-(0028, '28', NULL, 'Proper tool being used? Stored after use? Grounded properly?', 'ACTIVE'),
-(0029, '29', NULL, 'All operators qualified? Complies with local laws and ordinances?', 'ACTIVE'),
-(0003, '3', NULL, 'Injury records being kept? ', 'ACTIVE'),
-(0030, '30', NULL, 'Roads sidewalks protected? Adjacent structures properly shored?', 'ACTIVE'),
-(0031, '31', NULL, 'Barricades or covers installed?', 'ACTIVE'),
-(0032, '32', NULL, 'Excavation barricaded and lighting provided?', 'ACTIVE'),
-(0033, '33', NULL, 'Seat belts available? Lights, brakes, warning signals operative?', 'ACTIVE'),
-(0034, '34', NULL, 'Oily rag containers used and emptied daily at garage/repair shops?', 'ACTIVE'),
-(0035, '35', NULL, 'Adequate lighting and ventilation for repair shop and warehouse?', 'ACTIVE'),
-(0004, '4', NULL, 'Injury handling procedures established?', 'ACTIVE'),
-(0005, '5', NULL, 'Temp power for construction and equipment?', 'ACTIVE'),
-(0006, '6', NULL, 'Telephone, fax line & dedicated computer line? ', 'ACTIVE'),
-(0007, '7', NULL, 'Sanitary facilities are well maintained?', 'ACTIVE'),
-(0008, '8', NULL, 'Water available? (drinking, testing, dust control, personal use )', 'ACTIVE'),
-(0009, '9', NULL, 'Site communications ( radios, etc.)', 'ACTIVE');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `safetymain`
---
-
-CREATE TABLE `safetymain` (
-  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
-  `safetymain_id` varchar(20) NOT NULL,
-  `proj_id` varchar(100) NOT NULL,
-  `month` enum('JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER') NOT NULL,
-  `client_id` varchar(100) NOT NULL,
-  `conducted_by` varchar(100) NOT NULL,
-  `timesubmitted` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `acknowledged_by` varchar(100) NOT NULL,
-  `safetyremarks_id` varchar(20) NOT NULL,
-  `status` enum('ACTIVE','INACTIVE') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `safetyremarks`
---
-
-CREATE TABLE `safetyremarks` (
-  `no` int(4) UNSIGNED ZEROFILL NOT NULL,
-  `safetyremarks_id` varchar(20) NOT NULL,
-  `safetychecklist_id` varchar(20) NOT NULL,
-  `answer` enum('COMPLIANT','NEEDS IMPROVEMENT','NON-COMPLIANT','NOT APPLICABLE') NOT NULL,
-  `remarks` varchar(255) NOT NULL,
   `status` enum('ACTIVE','INACTIVE') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -1039,7 +904,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`no`, `user_id`, `emp_id`, `user_name`, `user_pass`, `user_type`, `status`) VALUES
-(1, 'user-0001', 'emp-0001', 'belts', '21232f297a57a5a743894a0e4a801fc3', 'PROJECT ENGINEER', 'ACTIVE');
+(1, 'user-0001', 'emp-0001', 'belts', '21232f297a57a5a743894a0e4a801fc3', 'PROJECT ENGINEER', 'ACTIVE'),
+(2, 'user-0002', 'emp-0002', 'lalakokaori', '21232f297a57a5a743894a0e4a801fc3', 'ADMIN', 'ACTIVE');
 
 -- --------------------------------------------------------
 
@@ -1115,14 +981,6 @@ ALTER TABLE `activities`
   ADD KEY `description` (`description`);
 
 --
--- Indexes for table `agenda`
---
-ALTER TABLE `agenda`
-  ADD PRIMARY KEY (`agenda_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `description` (`description`);
-
---
 -- Indexes for table `attendees`
 --
 ALTER TABLE `attendees`
@@ -1143,14 +1001,6 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`category_id`),
   ADD UNIQUE KEY `no` (`no`),
   ADD KEY `category_name` (`category_name`);
-
---
--- Indexes for table `checkpoints`
---
-ALTER TABLE `checkpoints`
-  ADD PRIMARY KEY (`checkpoints_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `description` (`description`);
 
 --
 -- Indexes for table `client`
@@ -1308,16 +1158,6 @@ ALTER TABLE `matreq`
   ADD KEY `matreq_ibfk_1` (`material_id`);
 
 --
--- Indexes for table `mobilization`
---
-ALTER TABLE `mobilization`
-  ADD PRIMARY KEY (`mobi_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `remarks_id` (`remarks_id`),
-  ADD KEY `mobilization_ibfk_1` (`proj_id`),
-  ADD KEY `FK_mobilization_checkpoints` (`checkpoints_id`);
-
---
 -- Indexes for table `monthlyacco`
 --
 ALTER TABLE `monthlyacco`
@@ -1358,22 +1198,19 @@ ALTER TABLE `monthlysched`
   ADD KEY `monthlysched_ibfk_2` (`prepared_by`);
 
 --
--- Indexes for table `orientation`
---
-ALTER TABLE `orientation`
-  ADD PRIMARY KEY (`orient_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `FK_orientation_employee` (`emp_id`),
-  ADD KEY `orientation_ibfk_2` (`agenda_id`),
-  ADD KEY `FK_orientation_attendees` (`attendees_id`),
-  ADD KEY `FK_orientation_project` (`proj_id`);
-
---
 -- Indexes for table `part`
 --
 ALTER TABLE `part`
   ADD PRIMARY KEY (`part_id`),
   ADD KEY `no` (`no`);
+
+--
+-- Indexes for table `part-trans`
+--
+ALTER TABLE `part-trans`
+  ADD UNIQUE KEY `no` (`no`),
+  ADD KEY `contract_id` (`contract_id`),
+  ADD KEY `part_id` (`part_id`);
 
 --
 -- Indexes for table `pay_item`
@@ -1384,12 +1221,13 @@ ALTER TABLE `pay_item`
   ADD KEY `FK_pay_item_part` (`part_id`);
 
 --
--- Indexes for table `photos`
+-- Indexes for table `pay_item-trans`
 --
-ALTER TABLE `photos`
-  ADD PRIMARY KEY (`photo_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `FK_photos_project` (`proj_id`);
+ALTER TABLE `pay_item-trans`
+  ADD UNIQUE KEY `no` (`no`),
+  ADD KEY `contract_id` (`contract_id`),
+  ADD KEY `part_id` (`part_id`),
+  ADD KEY `pay_item_id` (`pay_item_id`);
 
 --
 -- Indexes for table `problems`
@@ -1410,6 +1248,13 @@ ALTER TABLE `project`
   ADD KEY `proj_location` (`proj_location`),
   ADD KEY `proj_code` (`proj_code`),
   ADD KEY `target_date` (`target_date`);
+
+--
+-- Indexes for table `proj_team`
+--
+ALTER TABLE `proj_team`
+  ADD UNIQUE KEY `no` (`no`),
+  ADD KEY `proj_id` (`proj_id`);
 
 --
 -- Indexes for table `received`
@@ -1462,35 +1307,6 @@ ALTER TABLE `reports`
   ADD KEY `a_t_key` (`assigned_to`),
   ADD KEY `s_t_key` (`submitted_to`),
   ADD KEY `FK_reports_project` (`proj_id`);
-
---
--- Indexes for table `safetychecklist`
---
-ALTER TABLE `safetychecklist`
-  ADD PRIMARY KEY (`safetychecklist_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `description` (`description`),
-  ADD KEY `FK_safetychecklist_project` (`proj_id`);
-
---
--- Indexes for table `safetymain`
---
-ALTER TABLE `safetymain`
-  ADD PRIMARY KEY (`safetymain_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `FK_safetymain_engineer_2` (`acknowledged_by`),
-  ADD KEY `FK_safetymain_project` (`proj_id`),
-  ADD KEY `FK_safetymain_client` (`client_id`),
-  ADD KEY `FK_safetymain_employee` (`conducted_by`),
-  ADD KEY `FK_safetymain_safetyremarks` (`safetyremarks_id`);
-
---
--- Indexes for table `safetyremarks`
---
-ALTER TABLE `safetyremarks`
-  ADD PRIMARY KEY (`safetyremarks_id`),
-  ADD KEY `no` (`no`),
-  ADD KEY `safetychecklist` (`safetychecklist_id`);
 
 --
 -- Indexes for table `scope`
@@ -1555,11 +1371,6 @@ ALTER TABLE `actions`
 ALTER TABLE `activities`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `agenda`
---
-ALTER TABLE `agenda`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
 -- AUTO_INCREMENT for table `attendees`
 --
 ALTER TABLE `attendees`
@@ -1573,12 +1384,7 @@ ALTER TABLE `audit`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT for table `checkpoints`
---
-ALTER TABLE `checkpoints`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `client`
 --
@@ -1593,7 +1399,7 @@ ALTER TABLE `consultant`
 -- AUTO_INCREMENT for table `contract`
 --
 ALTER TABLE `contract`
-  MODIFY `no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `dailyacco`
 --
@@ -1665,11 +1471,6 @@ ALTER TABLE `materials`
 ALTER TABLE `matreq`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `mobilization`
---
-ALTER TABLE `mobilization`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `monthlyacco`
 --
 ALTER TABLE `monthlyacco`
@@ -1685,14 +1486,14 @@ ALTER TABLE `monthlymat`
 ALTER TABLE `monthlysched`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `orientation`
---
-ALTER TABLE `orientation`
-  MODIFY `no` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `part`
 --
 ALTER TABLE `part`
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `part-trans`
+--
+ALTER TABLE `part-trans`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `pay_item`
@@ -1700,10 +1501,10 @@ ALTER TABLE `part`
 ALTER TABLE `pay_item`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
--- AUTO_INCREMENT for table `photos`
+-- AUTO_INCREMENT for table `pay_item-trans`
 --
-ALTER TABLE `photos`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
+ALTER TABLE `pay_item-trans`
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `problems`
 --
@@ -1713,7 +1514,12 @@ ALTER TABLE `problems`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `proj_team`
+--
+ALTER TABLE `proj_team`
+  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `received`
 --
@@ -1744,323 +1550,6 @@ ALTER TABLE `remarks`
 --
 ALTER TABLE `reports`
   MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `safetychecklist`
---
-ALTER TABLE `safetychecklist`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
---
--- AUTO_INCREMENT for table `safetymain`
---
-ALTER TABLE `safetymain`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `safetyremarks`
---
-ALTER TABLE `safetyremarks`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `scope`
---
-ALTER TABLE `scope`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `subcategories`
---
-ALTER TABLE `subcategories`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT for table `subcontractor`
---
-ALTER TABLE `subcontractor`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT for table `visitors`
---
-ALTER TABLE `visitors`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `workacco`
---
-ALTER TABLE `workacco`
-  MODIFY `no` int(4) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT;
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `actions`
---
-ALTER TABLE `actions`
-  ADD CONSTRAINT `FK_actions_problems` FOREIGN KEY (`prob_id`) REFERENCES `problems` (`prob_id`);
-
---
--- Constraints for table `audit`
---
-ALTER TABLE `audit`
-  ADD CONSTRAINT `FK_audit_user` FOREIGN KEY (`name`) REFERENCES `user` (`user_id`);
-
---
--- Constraints for table `consultant`
---
-ALTER TABLE `consultant`
-  ADD CONSTRAINT `FK_consultant_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `consultant_ibfk_1` FOREIGN KEY (`scope_id`) REFERENCES `scope` (`scope_id`);
-
---
--- Constraints for table `contract`
---
-ALTER TABLE `contract`
-  ADD CONSTRAINT `contract_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `contract_ibfk_2` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`);
-
---
--- Constraints for table `dailyacco`
---
-ALTER TABLE `dailyacco`
-  ADD CONSTRAINT `FK_dailyacco_dailyeqpt` FOREIGN KEY (`deqpt_id`) REFERENCES `dailyeqpt` (`deqpt_id`),
-  ADD CONSTRAINT `FK_dailyacco_dailylabor` FOREIGN KEY (`dlabor_id`) REFERENCES `dailylabor` (`dlabor_id`),
-  ADD CONSTRAINT `FK_dailyacco_dailymat` FOREIGN KEY (`dmat_id`) REFERENCES `dailymat` (`dmat_id`),
-  ADD CONSTRAINT `dailyacco_ibfk_1` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `dailyacco_ibfk_10` FOREIGN KEY (`approved_by`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `dailyacco_ibfk_2` FOREIGN KEY (`activities_id`) REFERENCES `activities` (`activities_id`),
-  ADD CONSTRAINT `dailyacco_ibfk_6` FOREIGN KEY (`received_id`) REFERENCES `received` (`received_id`),
-  ADD CONSTRAINT `dailyacco_ibfk_7` FOREIGN KEY (`prepared_by`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `dailyacco_ibfk_8` FOREIGN KEY (`prob_id`) REFERENCES `problems` (`prob_id`),
-  ADD CONSTRAINT `dailyacco_ibfk_9` FOREIGN KEY (`visitors_id`) REFERENCES `visitors` (`visitors_id`);
-
---
--- Constraints for table `dailyeqpt`
---
-ALTER TABLE `dailyeqpt`
-  ADD CONSTRAINT `FK_dailyeqpt_equipment` FOREIGN KEY (`eqpt_id`) REFERENCES `equipment` (`eqpt_id`);
-
---
--- Constraints for table `dailylabor`
---
-ALTER TABLE `dailylabor`
-  ADD CONSTRAINT `FK_dailylabor_labor` FOREIGN KEY (`labor_id`) REFERENCES `labor` (`labor_id`);
-
---
--- Constraints for table `dailymat`
---
-ALTER TABLE `dailymat`
-  ADD CONSTRAINT `FK_dailymat_materials` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`);
-
---
--- Constraints for table `documents`
---
-ALTER TABLE `documents`
-  ADD CONSTRAINT `documents_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
-
---
--- Constraints for table `eqptdep`
---
-ALTER TABLE `eqptdep`
-  ADD CONSTRAINT `FK_eqptdep_equipment` FOREIGN KEY (`eqpt_id`) REFERENCES `equipment` (`eqpt_id`),
-  ADD CONSTRAINT `FK_eqptdep_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`);
-
---
--- Constraints for table `eqptreq`
---
-ALTER TABLE `eqptreq`
-  ADD CONSTRAINT `eqptreq_ibfk_1` FOREIGN KEY (`eqpt_id`) REFERENCES `equipment` (`eqpt_id`);
-
---
--- Constraints for table `equipment`
---
-ALTER TABLE `equipment`
-  ADD CONSTRAINT `equipment_ibfk-1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `equipment_ibfk_1` FOREIGN KEY (`subcat_id`) REFERENCES `subcategories` (`subcat_id`);
-
---
--- Constraints for table `labor`
---
-ALTER TABLE `labor`
-  ADD CONSTRAINT `labor_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
-
---
--- Constraints for table `laborreq`
---
-ALTER TABLE `laborreq`
-  ADD CONSTRAINT `laborreq_ibfk_1` FOREIGN KEY (`labor_id`) REFERENCES `labor` (`labor_id`);
-
---
--- Constraints for table `majoract`
---
-ALTER TABLE `majoract`
-  ADD CONSTRAINT `FK_majoract_activities` FOREIGN KEY (`activities_id`) REFERENCES `activities` (`activities_id`);
-
---
--- Constraints for table `materials`
---
-ALTER TABLE `materials`
-  ADD CONSTRAINT `materials_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
-
---
--- Constraints for table `matreq`
---
-ALTER TABLE `matreq`
-  ADD CONSTRAINT `matreq_ibfk_1` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`);
-
---
--- Constraints for table `mobilization`
---
-ALTER TABLE `mobilization`
-  ADD CONSTRAINT `FK_mobilization_checkpoints` FOREIGN KEY (`checkpoints_id`) REFERENCES `checkpoints` (`checkpoints_id`),
-  ADD CONSTRAINT `mobilization_ibfk_1` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `mobilization_ibfk_2` FOREIGN KEY (`remarks_id`) REFERENCES `remarks` (`remarks_id`);
-
---
--- Constraints for table `monthlyacco`
---
-ALTER TABLE `monthlyacco`
-  ADD CONSTRAINT `FK_monthlyacco_actions` FOREIGN KEY (`actions_id`) REFERENCES `actions` (`actions_id`),
-  ADD CONSTRAINT `FK_monthlyacco_activities` FOREIGN KEY (`activities_id`) REFERENCES `activities` (`activities_id`),
-  ADD CONSTRAINT `FK_monthlyacco_client` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
-  ADD CONSTRAINT `FK_monthlyacco_contract` FOREIGN KEY (`contract_id`) REFERENCES `contract` (`contract_id`),
-  ADD CONSTRAINT `FK_monthlyacco_employee` FOREIGN KEY (`prepared_by`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `FK_monthlyacco_employee_2` FOREIGN KEY (`noted_by`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `FK_monthlyacco_majoract` FOREIGN KEY (`majoract_id`) REFERENCES `majoract` (`majoract_id`),
-  ADD CONSTRAINT `FK_monthlyacco_monthlymat` FOREIGN KEY (`mmat_id`) REFERENCES `monthlymat` (`mmat_id`),
-  ADD CONSTRAINT `FK_monthlyacco_problems` FOREIGN KEY (`prob_id`) REFERENCES `problems` (`prob_id`),
-  ADD CONSTRAINT `FK_monthlyacco_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `FK_monthlyacco_workacco` FOREIGN KEY (`workacco_id`) REFERENCES `workacco` (`workacco_id`);
-
---
--- Constraints for table `monthlymat`
---
-ALTER TABLE `monthlymat`
-  ADD CONSTRAINT `FK_monthlymat_materials` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`);
-
---
--- Constraints for table `monthlysched`
---
-ALTER TABLE `monthlysched`
-  ADD CONSTRAINT `FK_monthlysched_engineer` FOREIGN KEY (`approved_by`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `monthlysched_ibfk_1` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `monthlysched_ibfk_2` FOREIGN KEY (`prepared_by`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `monthlysched_ibfk_3` FOREIGN KEY (`laborreq_id`) REFERENCES `laborreq` (`laborreq_id`),
-  ADD CONSTRAINT `monthlysched_ibfk_4` FOREIGN KEY (`matreq_id`) REFERENCES `matreq` (`matreq_id`),
-  ADD CONSTRAINT `monthlysched_ibfk_5` FOREIGN KEY (`eqptreq_id`) REFERENCES `eqptreq` (`eqptreq_id`);
-
---
--- Constraints for table `orientation`
---
-ALTER TABLE `orientation`
-  ADD CONSTRAINT `FK_orientation_attendees` FOREIGN KEY (`attendees_id`) REFERENCES `attendees` (`attendees_id`),
-  ADD CONSTRAINT `FK_orientation_employee` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `FK_orientation_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `orientation_ibfk_2` FOREIGN KEY (`agenda_id`) REFERENCES `agenda` (`agenda_id`);
-
---
--- Constraints for table `pay_item`
---
-ALTER TABLE `pay_item`
-  ADD CONSTRAINT `FK_pay_item_part` FOREIGN KEY (`part_id`) REFERENCES `part` (`part_id`);
-
---
--- Constraints for table `photos`
---
-ALTER TABLE `photos`
-  ADD CONSTRAINT `FK_photos_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`);
-
---
--- Constraints for table `project`
---
-ALTER TABLE `project`
-  ADD CONSTRAINT `FK_project_contract` FOREIGN KEY (`contract_id`) REFERENCES `contract` (`contract_id`);
-
---
--- Constraints for table `received`
---
-ALTER TABLE `received`
-  ADD CONSTRAINT `received_ibfk_1` FOREIGN KEY (`receivedeqpt_id`) REFERENCES `receivedeqpt` (`receivedeqpt_id`),
-  ADD CONSTRAINT `received_ibfk_2` FOREIGN KEY (`receiveddocu_id`) REFERENCES `receiveddocu` (`receiveddocu_id`),
-  ADD CONSTRAINT `received_ibfk_3` FOREIGN KEY (`receivedmat_id`) REFERENCES `receivedmat` (`receivedmat_id`);
-
---
--- Constraints for table `receiveddocu`
---
-ALTER TABLE `receiveddocu`
-  ADD CONSTRAINT `receiveddocu_ibfk_1` FOREIGN KEY (`docu_id`) REFERENCES `documents` (`docu_id`);
-
---
--- Constraints for table `receivedeqpt`
---
-ALTER TABLE `receivedeqpt`
-  ADD CONSTRAINT `receivedeqpt_ibfk_1` FOREIGN KEY (`eqpt_id`) REFERENCES `equipment` (`eqpt_id`);
-
---
--- Constraints for table `receivedmat`
---
-ALTER TABLE `receivedmat`
-  ADD CONSTRAINT `receivedmat_ibfk_1` FOREIGN KEY (`material_id`) REFERENCES `materials` (`material_id`);
-
---
--- Constraints for table `remarks`
---
-ALTER TABLE `remarks`
-  ADD CONSTRAINT `remarks_ibfk_1` FOREIGN KEY (`checkpoints_id`) REFERENCES `checkpoints` (`checkpoints_id`);
-
---
--- Constraints for table `reports`
---
-ALTER TABLE `reports`
-  ADD CONSTRAINT `FK_reports_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `at_fk` FOREIGN KEY (`assigned_to`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `st_fk` FOREIGN KEY (`submitted_to`) REFERENCES `employee` (`emp_id`);
-
---
--- Constraints for table `safetychecklist`
---
-ALTER TABLE `safetychecklist`
-  ADD CONSTRAINT `FK_safetychecklist_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`);
-
---
--- Constraints for table `safetymain`
---
-ALTER TABLE `safetymain`
-  ADD CONSTRAINT `FK_safetymain_client` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`),
-  ADD CONSTRAINT `FK_safetymain_employee` FOREIGN KEY (`conducted_by`) REFERENCES `employee` (`emp_id`),
-  ADD CONSTRAINT `FK_safetymain_project` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`),
-  ADD CONSTRAINT `FK_safetymain_safetyremarks` FOREIGN KEY (`safetyremarks_id`) REFERENCES `safetyremarks` (`safetyremarks_id`);
-
---
--- Constraints for table `safetyremarks`
---
-ALTER TABLE `safetyremarks`
-  ADD CONSTRAINT `safetyremarks_ibfk_1` FOREIGN KEY (`safetychecklist_id`) REFERENCES `safetychecklist` (`safetychecklist_id`);
-
---
--- Constraints for table `subcategories`
---
-ALTER TABLE `subcategories`
-  ADD CONSTRAINT `subcategories_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `categories` (`category_id`);
-
---
--- Constraints for table `subcontractor`
---
-ALTER TABLE `subcontractor`
-  ADD CONSTRAINT `subcontractor_ibfk_1` FOREIGN KEY (`scope_id`) REFERENCES `scope` (`scope_id`);
-
---
--- Constraints for table `user`
---
-ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`);
-
---
--- Constraints for table `workacco`
---
-ALTER TABLE `workacco`
-  ADD CONSTRAINT `workacco_ibfk_1` FOREIGN KEY (`proj_id`) REFERENCES `project` (`proj_id`);
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

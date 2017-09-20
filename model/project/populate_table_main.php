@@ -9,7 +9,9 @@
 
   foreach($browse as $fetch)
   {
-    $output[] = array ($fetch['contract_id'],$fetch['proj_id']);
+    $output[] = array ($fetch['contract_id'],$fetch['proj_name'],);
+
+    //contract view
   }
 $conn = null;
 
