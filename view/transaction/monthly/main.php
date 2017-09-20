@@ -42,49 +42,47 @@
                 <div class="box-header">     
                   <div class="row" style="margin-top:25px">
 
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                    <div class="col-md-3 col-xs-12">
                       <label id="custnameErr" ><font color="darkred">*</font>Project Name :</label>
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+                       <input type="text" placeholder=" Search Name ">
                       </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
+                      
                     </div> <!-- /.col-->  <!--Customer Field-->
 
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Project Code :</label>
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
+                       <input type="text" placeholder=" Search Name ">
+                      </div>   
                     </div> <!-- /.col-->  <!--Customer Field-->
 
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Project Location :</label>
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
+                       <input type="text" placeholder=" Search Name ">
+                      </div>      
+                      
                     </div> <!-- /.col-->  <!--Customer Field-->
 
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                    <div class="col-md-3 col-xs-12">
                       <label id="custnameErr" ><font color="darkred">*</font>Agent/Client Name :</label>
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>    
-                      <input type='hidden' id="chkCust" value="no-match">
+                       <input type="text" placeholder=" Search Name ">
+                      </div>   
                     </div> <!-- /.col-->  <!--Customer Field-->
 
 
 
-                    <div class="col-md-3 col-xs-12" id="transdateDiv">
+                    <div class="col-md-3 col-xs-12">
                       <label id="transdateErr" ><font color="darkred">*</font>Contract Period :</label>    
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                        <input id="transdate" value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
+                        <input value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
                       </div>    
                     </div> <!-- /.col-->  
 
@@ -230,61 +228,120 @@
                       </div>    
                       <input type='hidden' id="chkCust" value="no-match">
                     </div> <!-- /.col-->  <!--Customer Field-->
-                    <label id="custnameErr" ><font color="darkred">*</font>Equivalent in days :</label>
-                    <br>
-                    <input type="radio" name="gender" value="male"> ahead : 
-                    <span class="input-group-addon"> days</span>
-                    <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                    <br>
-                    <input type="radio" name="gender" value="male"> Male<br>
+               
+
+
+
                   </div><!--/.row-->
+
+
+                    <div class="row" style="margin-top:25px">
+
+                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                      <label id="custnameErr" ><font color="darkred">*</font>Equivalent in days :</label>
+                      <div class="input-group" style="margin-top:3px">
+                        <input type="radio" name="gender" value="male"> ahead :<br>
+                       <span class="input-group-addon">days</i></span>
+                       <input id="custname" type="number" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+
+                      </div>    
+                      
+                      <div class="input-group" style="margin-top:3px">
+                        <input type="radio" name="gender" value="male"> delay :<br>
+                       <span class="input-group-addon">days</i></span>
+                       <input id="custname" type="number" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+
+                      </div>    
+                    </div> <!-- /.col-->  <!--Customer Field-->
+
+                      
+
+                  </div><!--/.row-->
+
+                  <h1>
+           
+            <small>Project Duration</small>
+          </h1>   
+                    <div class="row" style="margin-top:25px">
+
+                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                      <label id="custnameErr" ><font color="darkred">*</font>Contract :</label>
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon">days</i></span>
+                       <input id="custname" type="number" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+
+                      </div>    
+                      
+                    </div> <!-- /.col-->  <!--Customer Field-->
+
+                      <div class="col-md-3 col-xs-12" id="custnameDiv">
+                      <label id="custnameErr" ><font color="darkred">*</font>Completed :</label>
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon">days</i></span>
+                       <input id="custname" type="number" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+
+                      </div>    
+                      
+                    </div> <!-- /.col-->  <!--Customer Field-->
+
+                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                      <label id="custnameErr" ><font color="darkred">*</font>Remaining :</label>
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon">days</i></span>
+                       <input id="custname" type="number" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+
+                      </div>    
+                      
+                    </div> <!-- /.col-->  <!--Customer Field-->
+               
+                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                      <label id="custnameErr" ><font color="darkred">*</font>Granted time extension :</label>
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon">days</i></span>
+                       <input id="custname" type="number" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+
+                      </div>    
+                      
+                    </div> <!-- /.col-->  <!--Customer Field-->
+
+
+                  </div><!--/.row-->
+
+
+
+                 
 
                     <!-- address rows -->
                     <div class="row"  style="margin-top:25px" id="pickupDiv">
                       <div class="col-md-3 col-xs-12">
-                        <label id="pickupErr" ><font color="darkred">*</font>Problems Encountered :</label>     
+                        <label id="pickupErr" ><font color="darkred">*</font>Activities Accomplished for the Month :</label>     
                         <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
                       </div> <!--/. col -->
-                  
 
-                    <div class="col-md-3 col-xs-12" id="deliveryDiv">
-                      <label id="deliveryErr" ><font color="darkred">*</font>Visitors :</label>     
-                      <textarea id="delivery" rows="2" class="form-control" style="resize:none"></textarea>
-                    </div> <!--/. -->
+                      <div class="col-md-3 col-xs-12">
+                        <label id="pickupErr" ><font color="darkred">*</font>Problems Encountered:</label>     
+                        <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
+                      </div> <!--/. col -->
+                      
+                      <div class="col-md-3 col-xs-12">
+                        <label id="pickupErr" ><font color="darkred">*</font>Actions Taken:</label>     
+                        <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
+                      </div> <!--/. col -->
 
-                    
-                  </div> <!-- /. row -->
+                      <div class="col-md-3 col-xs-12">
+                        <label id="pickupErr" ><font color="darkred">*</font>Major Activities Next Month:</label>     
+                        <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
+                      </div> <!--/. col -->
 
-                  <div class="row"  style="margin-top:25px" id="pickupDiv">
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Prepared by :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>   
-                      <div class="input-group" style="margin-top:3px">
-                     
-                       
-                      </div>    
+                      <div class="col-md-3 col-xs-12">
+                        <label id="pickupErr" ><font color="darkred">*</font>Materials Needed:</label>     
+                        <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
+                      </div> <!--/. col -->
 
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div>
-
-                    <div class="col-md-3 col-xs-12" id="custnameDiv">
-                      <label id="custnameErr" ><font color="darkred">*</font>Approved by :</label>
-                      <div class="input-group" style="margin-top:3px">
-                       <span class="input-group-addon"></span>
-                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
-                      </div>   
-                      <div class="input-group" style="margin-top:3px">
-                     
-                       
-                      </div>    
-
-                      <input type='hidden' id="chkCust" value="no-match">
-                    </div>
-
-                    
+                      <div class="col-md-3 col-xs-12">
+                        <label id="pickupErr" ><font color="darkred">*</font>Remarks :</label>     
+                        <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
+                      </div> <!--/. col -->
                   </div> <!-- /. row -->
 
                   
