@@ -35,19 +35,14 @@ function(isConfirm){
 		var Safety =$('#Safety').val();
 		var time =$('#Timekeeper').val();
 
-<<<<<<< HEAD
-		var dataString ='om='+om+'&pi='+pi+'&mat='+mat+'&Foreman='+Foreman+'&Warehouse='+Warehouse+'&EIC='+EIC+'&Safety='+Safety+'&time='+time
-		;
-=======
 		var dataString ='om='+om+'&pi='+pi+'&mat='+mat+'&Foreman='+Foreman+'&Warehouse='+Warehouse+'&EIC='+EIC+'&Safety='+Safety+'&time='+time;
->>>>>>> mobile
 		console.log(dataString);
 
 		swal("", "Saved", "success");
 
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/transaction/project.php",
+			url: "../../../model/transaction/team.php",
 			data: dataString,
 			dataType: 'json',
 			cache: false,

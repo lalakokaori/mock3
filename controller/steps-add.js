@@ -1,5 +1,96 @@
-
 populate_client()
+//reset();
+populate_table_main(1);
+populate_table_main(0);
+//populate_cat();
+
+
+
+$('#btn_save').val('create');
+$('#btn_save1').val('create');
+
+
+
+var table_category = $('#table_category').dataTable({
+	"aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
+	"aaSorting": []
+});
+var table_subcategory = $('#table_subcategory').dataTable({
+	"aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
+	"aaSorting": []
+});
+
+
+
+
+function populate_table_main(table){
+//ajax now
+if(table==1){
+
+		$.ajax ({
+			type: "POST",
+			url: "../../../model/subcat/populate_table_category.php",
+			data:"types="+test ,
+			dataType: 'json',
+			cache: false,
+		success: function(s)
+				{
+
+					table_category.fnClearTable();
+					for(var i = 0; i < s.length; i++)
+						{
+							//if(s[i][2]=='inactive'){enability='disabled'}
+							table_category.fnAddData
+							([s[i][0],s[i][1],
+
+
+				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
+				'<button data-toggle="tooltip" onclick="table_row_del(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete" id="del"> <i class="fa fa-trash"></i>Delete </button>',
+					],false);
+					table_category.fnDraw();
+
+						}
+				}
+				});
+//ajax end
+			}
+		else if(table==0)
+			{
+					$.ajax ({
+			type: "POST",
+			url: "../../../model/subcat/populate_table_subcategory.php",
+			data:"types="+test ,
+			dataType: 'json',
+			cache: false,
+			success: function(s)
+				{
+
+					table_subcategory.fnClearTable();
+					for(var i = 0; i < s.length; i++)
+						{
+							//if(s[i][2]=='inactive'){enability='disabled'}
+							table_subcategory.fnAddData
+							([s[i][0],s[i][1],s[i][2],
+
+
+				'<button data-toggle="tooltip" onclick="table_row_view(this.value,0)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
+				'<button data-toggle="tooltip" onclick="table_row_del(this.value,0)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete"> <i class="fa fa-trash"></i>Delete </button>',
+					],false);
+					table_subcategory.fnDraw();
+
+						}
+				}
+				});
+
+
+
+
+			}
+			else
+			{
+				alert("error table"+table );
+			}
+	}
 
 function populate_client(selector){
 			//ajax now

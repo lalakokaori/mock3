@@ -14,7 +14,7 @@ function populate_table_main(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/PIN/populate_table_main.php",
+	  url: "../../../model/pay_item/populate_table_main.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
@@ -46,7 +46,7 @@ function table_row_view(id){
 		//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/PIN/fetch.php",
+	  url: "../../../model/pay_item/fetch.php",
 	  data: 'id='+id,
 	  dataType: 'json',
 	  cache: false,
@@ -150,7 +150,7 @@ function(isConfirm){
   	//ajax  start
   	$.ajax ({
 		type: "POST",
-		url: "../../../model/PIN/delete.php",
+		url: "../../../model/pay_item/depay_itemlete.php",
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
@@ -194,7 +194,7 @@ $('#btn_save').click(function(){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/PIN/create.php",
+			  url: "../../../model/pay_item/create.php",
 			  data: dataString,
 			  dataType: 'json',
 			  cache: false,
@@ -222,7 +222,7 @@ title: "Saved",
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/PIN/update.php",
+			  url: "../../../model/pay_item/update.php",
 			  data: dataString+'&id='+id,
 			  dataType: 'json',
 			  cache: false,
@@ -253,7 +253,7 @@ function populate_part(selector){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/PIN/populate_part.php",
+			  url: "../../../model/pay_item/populate_part.php",
 			  dataType: 'json',
 			  cache: false,
 			  success: function(s){
@@ -263,7 +263,7 @@ function populate_part(selector){
 			        for(var i = 0; i < s.length; i++) {
 			          let iselected = '';
 			          if(s[i][0] == selector){ iselected='selected' }
-			          c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
+			          c.append('<option value='+s[i][0]+'>'+s[i][1]+'-'+s[i][2]+'</option>');
 			        }
 
 
