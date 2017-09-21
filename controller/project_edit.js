@@ -45,6 +45,9 @@ function populate_table_main(){
 	//ajax end
 } //
 
+
+
+
 function populate_table_sub(){
 	//ajax now
 	$.ajax ({
@@ -61,12 +64,13 @@ function populate_table_sub(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_sub.fnAddData
-	      ([s[i][0],s[i][1],s[i][1],
+	      ([
+	      	s[i].contract_id,s[i].proj_name,multiple_projects(s[i].proj_team),
 
 
-	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>'+'   '+
-	      	'<a href="../../../view/transaction/part-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
-	      	'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>'
+	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>'+'   '+
+	      	'<a href="../../../view/transaction/part-trans/main.php?contract='+s[i].contract_id+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
+	      	'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>'
 	      ],false);
 	      table_sub.fnDraw();
 
@@ -76,6 +80,13 @@ function populate_table_sub(){
 	//ajax end
 } //
 
+function multiple_projects(obj){
+	let projects = '';
+	obj.map((tae)=>{
+		projects = `${tae.opt_mgr} ,${tae.field_engr} ,${tae.mtrls_engr} ,${tae.foreman} ,${tae.wrh_incharge},${tae.eqpt_incharge},${tae.safety_officer},${tae.timekeeper} `
+	})
+	return projects;
+}
 
 function table_row_view(id){
 	reset();
