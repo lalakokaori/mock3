@@ -400,19 +400,17 @@ else{
 		var part = $('#f_part').val();
 		var id =cont_id 
 		var desc = $('#f_desc').val();
-		var dataString = 'code='+code+'&part='+part+'&desc='+desc+'&id='+id;
+		var amnt = $('#f_amnt').val();
+		var pert = $('#f_pert').val();
+		var dataString = 'code='+code+'&part='+part+'&desc='+desc+'&amnt='+amnt+'&pert='+pert+'&id='+id;
 
-
-
-	var dataString = 'category='+category+'&subcategory='+ subcate+'&type='+ type;
-
-
+console.log(dataString);
 
 	if(this.value=='create'){ //CREATE MODE
 		//ajax now
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/subcat/create1.php",
+			url: "../../../model/pay_item/create.php",
 			data: dataString,
 			dataType: 'json',
 			cache: false,
@@ -496,7 +494,7 @@ function populate_cats(selector){
 			  dataType: 'json',
 			  cache: false,
 			  success: function(s){
-			  		var c = $('#modal_part');
+			  		var c = $('#f_part');
 			        c.empty();
 			        c.html('<option selected="selected" value="none">-Part-</option>');
 			        for(var i = 0; i < s.length; i++) {

@@ -80,13 +80,13 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
 
 </div> <!-- /.row -->
 
-                                        <div class="col-sm-6 col-xs-12" id="f_type_subcat_div" class='form-group'>
-                                                <label><font color="darkred">*</font>Amount</label> <!-- MODEL -->
-                                                <input type="number" class="form-control input-lg" id="f_type_subcat" required>
+                                        <div class="col-sm-6 col-xs-12" id="f_amnt_div" class='form-group'>
+                                                <label><font color="darkred">*</font>Qty</label> <!-- MODEL -->
+                                                <input type="number" class="form-control input-lg" id="f_amnt" required>
                                             </div>
-                                        <div class="col-sm-6 col-xs-12" id="f_type_percent_div" class='form-group'>
+                                        <div class="col-sm-6 col-xs-12" id="f_pert_div" class='form-group'>
                                                 <label><font color="darkred">*</font>Percent</label> <!-- MODEL -->
-                                                <input type="number" class="form-control input-lg" id="f_percent_subcat" required>
+                                                <input type="number" class="form-control input-lg" id="f_pert" required>
                                             </div>
 
                                         </div>
