@@ -150,7 +150,7 @@ function(isConfirm){
   	//ajax  start
   	$.ajax ({
 		type: "POST",
-		url: "../../../model/pay_item/depay_itemlete.php",
+		url: "../../../model/pay_item/pay_item/delete.php",
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,

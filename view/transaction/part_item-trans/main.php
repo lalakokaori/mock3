@@ -56,19 +56,30 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                                             <h4 class="modal-title" id="myModalLabel">Item</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="col-sm-6 col-xs-12" id="modal_part_div" class='form-group'>
-                                            <label><font color="darkred">*</font>Part</label> <!-- MODEL -->
-                                             <select class="form-control input-lg" id="modal_part" required>
+                                            
 
-                                            </select>
-                                        </div>
 
-                                           <div class="col-sm-6 col-xs-12" id="f_type_subcat_div" class='form-group'>
-                                                <label><font color="darkred">*</font>Item</label> <!-- MODEL -->
-                                             <select class="form-control input-lg" id="modal_item" required>
 
-                                            </select>
-                                            </div>
+                                        <div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
+                                        <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
+                                        <label><font color="darkred">*</font>Code</label> <!-- Category -->
+                                        <input type="text" class="form-control input-lg" id="f_code" required>
+                                          </div>
+
+                                      <div class="col-sm-4 col-xs-12" id="f_part_div" class='form-group'>
+                                            <label><font color="darkred">*</font>Part</label> <!-- type -->
+                                         <select class="form-control input-lg" id="f_part" required>
+                                         <option value="none">-PART-</option>
+                                         </select>
+                                         </div>
+
+                                         <div class="col-sm-4 col-xs-12" id="f_desc_div" class='form-group'>
+                                         <label><font color="darkred">*</font>Description</label> <!-- Category -->
+                                         <input type="text" class="form-control input-lg" id="f_desc" required>
+                                         </div>
+
+</div> <!-- /.row -->
+
                                         <div class="col-sm-6 col-xs-12" id="f_type_subcat_div" class='form-group'>
                                                 <label><font color="darkred">*</font>Amount</label> <!-- MODEL -->
                                                 <input type="number" class="form-control input-lg" id="f_type_subcat" required>
