@@ -7,10 +7,9 @@
   $q -> execute();
   $browse = $q -> fetchAll();
   foreach($browse as $fetch)
-  $output[] = array ($fetch['part_id'],$fetch['part_desc']);
-  {
+  {$output[] = array ($fetch['part_id'],$fetch['part_desc']);
   }
-$conn = null;
+//$conn = null;
 
 echo json_encode($output);
 ?>

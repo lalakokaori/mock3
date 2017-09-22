@@ -59,7 +59,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                            <h4 class="modal-title" id="myModalLabel">Activity </h4>
                                         </div>
                                         <div class="modal-body">
                                         
@@ -67,7 +67,11 @@
 
 
  <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
-    <label><font color="darkred">*</font></label> <!-- Category -->
+    <label><font color="darkred">*</font>Part</label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_ID" required>
+  </div>
+ <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+    <label><font color="darkred">*</font>Item</label> <!-- Category -->
    <input type="text" class="form-control input-lg" id="f_ID" required>
   </div>
  <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
@@ -75,7 +79,7 @@
    <input type="text" class="form-control input-lg" id="f_name" required>
   </div>
  <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
-    <label><font color="darkred">*</font>Job</label> <!-- Category -->
+    <label><font color="darkred">*</font>Qty</label> <!-- Category -->
    <input type="text" class="form-control input-lg" id="f_job" required>
   </div>
 
@@ -104,7 +108,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                            <h4 class="modal-title" id="myModalLabel">Manpower</h4>
                                         </div>
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
@@ -124,7 +128,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                            <h4 class="modal-title" id="myModalLabel">Used</h4>
                                         </div>
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
@@ -144,7 +148,7 @@
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                            <h4 class="modal-title" id="myModalLabel">Reciecve</h4>
                                         </div>
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>

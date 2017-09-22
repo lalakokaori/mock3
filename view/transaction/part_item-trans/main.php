@@ -53,22 +53,29 @@ echo'<input type="hidden" id="type" value="'.$types.'">';
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Subcategory</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Item</h4>
                                         </div>
                                         <div class="modal-body">
-                                           <div class="col-sm-6 col-xs-12" id="f_type_subcat_div" class='form-group'>
-                                                <label><font color="darkred">*</font>Pay Item</label> <!-- MODEL -->
-                                                <input type="text" class="form-control input-lg" id="f_type_subcat" required><label>hey</label>
-                                            </div>
-                                            <div class="col-sm-6 col-xs-12" id="modal_category_div" class='form-group'>
+                                            <div class="col-sm-6 col-xs-12" id="modal_part_div" class='form-group'>
                                             <label><font color="darkred">*</font>Part</label> <!-- MODEL -->
-                                             <select class="form-control input-lg" id="modal_category" required>
+                                             <select class="form-control input-lg" id="modal_part" required>
 
                                             </select>
                                         </div>
-                                        <div class="col-sm-7 col-xs-12" id="f_type_subcat_div" class='form-group'>
+
+                                           <div class="col-sm-6 col-xs-12" id="f_type_subcat_div" class='form-group'>
+                                                <label><font color="darkred">*</font>Item</label> <!-- MODEL -->
+                                             <select class="form-control input-lg" id="modal_item" required>
+
+                                            </select>
+                                            </div>
+                                        <div class="col-sm-6 col-xs-12" id="f_type_subcat_div" class='form-group'>
                                                 <label><font color="darkred">*</font>Amount</label> <!-- MODEL -->
-                                                <input type="text" class="form-control input-lg" id="f_type_subcat" required>
+                                                <input type="number" class="form-control input-lg" id="f_type_subcat" required>
+                                            </div>
+                                        <div class="col-sm-6 col-xs-12" id="f_type_percent_div" class='form-group'>
+                                                <label><font color="darkred">*</font>Percent</label> <!-- MODEL -->
+                                                <input type="number" class="form-control input-lg" id="f_percent_subcat" required>
                                             </div>
 
                                         </div>

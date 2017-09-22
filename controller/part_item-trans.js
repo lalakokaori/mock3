@@ -2,6 +2,7 @@ reset();
 populate_table_main(1);
 populate_table_main(0);
 populate_cat();
+populate_cats();
 
 $('#btn_save').val('create');
 $('#btn_save1').val('create');
@@ -465,11 +466,32 @@ function populate_cat(selector){
 			//ajax now
 			$.ajax ({
 			  type: "POST",
-			  url: "../../../model/part_item-trans/populate_part.php",
+			  url: "../../../model/part_item-trans/populate_part-trans.php",
 			  dataType: 'json',
 			  cache: false,
 			  success: function(s){
 			  		var c = $('#modal_equip_type');
+			        c.empty();
+			        c.html('<option selected="selected" value="none">-Part-</option>');
+			        for(var i = 0; i < s.length; i++) {
+			          let iselected = '';
+			          if(s[i][0] == selector){ iselected='selected' }
+			          c.append('<option value='+s[i][0]+'>'+s[i][1]+'</option>');
+			        }
+
+
+			  }
+			});
+		}
+function populate_cats(selector){
+			//ajax now
+			$.ajax ({
+			  type: "POST",
+			  url: "../../../model/part_item-trans/populate_part.php",
+			  dataType: 'json',
+			  cache: false,
+			  success: function(s){
+			  		var c = $('#modal_part');
 			        c.empty();
 			        c.html('<option selected="selected" value="none">-Part-</option>');
 			        for(var i = 0; i < s.length; i++) {
