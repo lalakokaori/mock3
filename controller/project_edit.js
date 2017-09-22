@@ -67,9 +67,9 @@ function populate_table_sub(){
 	      	s[i].contract_id,s[i].proj_name,multiple_projects(s[i].proj_team),
 
 
-	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>'+'   '+
-	      	'<a href="../../../view/transaction/part-trans/main.php?contract='+s[i].contract_id+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
-	      	'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>'
+	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>',
+	      	//'<a href="../../../view/transaction/part-trans/main.php?contract='+s[i].contract_id+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
+	      	//'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>'
 	      ],false);
 	      table_sub.fnDraw();
 

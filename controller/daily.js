@@ -64,7 +64,7 @@ function populate_activity(){
 
 		$.ajax ({
 			type: "POST",
-			url: "../../../model/subcat/populate_cat.php",
+			url: "../../../model/daily/populate_table_act.php",
 			dataType: 'json',
 			cache: false,
 		success: function(s)
@@ -75,11 +75,10 @@ function populate_activity(){
 						{
 							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_Activity.fnAddData
-							([s[i][0],s[i][1],
+							([s[i][0],s[i][1],s[i][2],
 
 
-				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
-				'<button data-toggle="tooltip" onclick="table_row_del(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete" id="del"> <i class="fa fa-trash"></i>Delete </button>',
+				
 					],false);
 					table_Activity.fnDraw();
 
