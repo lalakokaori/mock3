@@ -81,8 +81,8 @@ setTimeout('Redirect()', 0);
             <li><a href="view/maintenance/scope/main.php">Scope of Work</a></li>
             <li><a href="view/maintenance/subcontractor/main.php">Subcontractor</a></li>
             <li><a href="view/maintenance/part/main.php">Part</a></li>
-            <li><a href="view/maintenance/pay_item/main.php">Items</a></li>
-          </ul>
+           <!--  <li><a href="view/maintenance/pay_item/main.php">Items</a></li>
+ -->          </ul>
         </li>
 
 
