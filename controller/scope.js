@@ -26,7 +26,7 @@ $.ajax ({
 			//if(s[i][2]=='inactive'){enability='disabled'}
 			table_main.fnAddData
 			([
-				s[i].scope_id, multiple_projects(s[i].scope_project),
+				s[i].scope_id,s[i].scope_name,
 				'<button data-toggle="tooltip" onclick="table_row_view(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
 				'<button data-toggle="tooltip" onclick="table_row_del(this.value)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete"> <i class="fa fa-trash"></i>Delete </button>',
 			],false);
@@ -38,13 +38,13 @@ $.ajax ({
 //ajax end
 } //
 
-function multiple_projects(obj){
-	let projects = '';
-	obj.map((tae)=>{
-		projects += `${tae.project_name} ,`
-	})
-	return projects;
-}
+// function multiple_projects(obj){
+// 	let projects = '';
+// 	obj.map((tae)=>{
+// 		projects += `${tae.project_name} ,`
+// 	})
+// 	return projects;
+// }
 
 function table_row_view(id){
 reset();

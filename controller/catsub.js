@@ -333,11 +333,12 @@ function(isConfirm){
 		data: 'id='+id,
 		dataType: 'json',
 		cache: false,
-		success: function(s){}
+		success: function(s){
+			populate_table_main(0);
+		}
 	});
 	//ajax end
 		reset();
-		populate_table_main(0);
 
   } else {
 		reset();
@@ -406,7 +407,10 @@ title: "Saved",
 			data: dataString+'&id='+id,
 			dataType: 'json',
 			cache: false,
-			success: function(s){}
+			success: function(s){
+			populate_table_main(1);
+
+							}
 		});
 		//ajax end
 			swal({
@@ -421,7 +425,6 @@ title: "Updated",
 });
 			reset();
 			$("#cat").modal("hide");
-			populate_table_main(1);
 
 	}
 }

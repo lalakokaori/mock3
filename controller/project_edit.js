@@ -1,5 +1,6 @@
 	reset();
 	populate_table_main();
+	populate_table_sub();
 	$('#btn_save').val('create');
 
 
@@ -8,12 +9,16 @@
     "aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
     "aaSorting": []
   });  //Initialize the datatable
+  var table_sub = $('#table_submain').dataTable({
+    "aoColumnDefs": [ { "bSortable": false, "aTargets": [] } ],
+    "aaSorting": []
+  });  //Initialize the datatable
 
 function populate_table_main(){
 	//ajax now
 	$.ajax ({
 	  type: "POST",
-	  url: "../../../model/project/populate_table_main.php",
+	  url: "../../../model/project_edit/populate_table_main.php",
 	  dataType: 'json',
 	  cache: false,
 	  success: function(s)
@@ -25,13 +30,11 @@ function populate_table_main(){
 	    	//if(s[i][2]=='inactive'){enability='disabled'}
 
 	      table_main.fnAddData
-	      ([s[i][0],s[i][1],s[i][1]+'<a href="../steps/main_team.php?id='+s[i][1]+'" data-toggle="modal" class="btn btn-xs btn-primary" title="VIEW /Edit" > <i class="fa fa-eye"></i>Edit</a>',
-				s[i][1]+'<a href="../../../view/transaction/part/main.php?id='+s[i][1]+'" data-toggle="modal" class="btn btn-xs btn-primary" title="VIEW /Edit" > <i class="fa fa-eye"></i>edit</a>',s[i][1],s[i][1],
+	      ([s[i][0],s[i][1],s[i][2],s[i][3],s[i][4],
 
 
-	        '<a href="../../../view/report/daily/main.php" data-toggle="modal" class="btn btn-xs btn-primary" title="VIEW /Edit" > <i class="fa fa-eye"></i>Daily</a>'+" "+
-	        '<a href="../../../view/report/daily/main.php" data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+" "+
-	      	'<a href="../../../view/report/monthly/main.php" onclick="" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>'
+	      	'<a href="../../../view/transaction/part_item-trans/main.php?contract='+s[i][0]+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>set Schedule</a>'+'   '+
+	      	'<a href="../../../view/transaction/steps/main_team.php?contract='+s[i][0]+'"  data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Set team</a>'
 	      ],false);
 	      table_main.fnDraw();
 
@@ -41,6 +44,48 @@ function populate_table_main(){
 	//ajax end
 } //
 
+
+
+
+function populate_table_sub(){
+	//ajax now
+	$.ajax ({
+	  type: "POST",
+	  url: "../../../model/project/populate_table_main.php",
+	  dataType: 'json',
+	  cache: false,
+	  success: function(s)
+	  {
+      	// console.log(s)
+	    table_sub.fnClearTable();
+	    for(var i = 0; i < s.length; i++)
+	    {
+	    	//if(s[i][2]=='inactive'){enability='disabled'}
+
+	      table_sub.fnAddData
+	      ([
+	      	s[i].contract_id,s[i].proj_name,multiple_projects(s[i].proj_team),
+
+
+	      	'<a href="../../../view/transaction/daily/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Daily</a>',
+	      	//'<a href="../../../view/transaction/part-trans/main.php?contract='+s[i].contract_id+'" data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Weekly</a>'+'   '+
+	      	//'<a href="../../../view/transaction/monthly/main.php" onclick="" value='+s[i].contract_id+' data-toggle="modal" class="btn btn-xs  btn-primary" title="Delete"> <i class="fa fa-trash"></i>Monthly</a>'
+	      ],false);
+	      table_sub.fnDraw();
+
+	    }
+	  }
+	});
+	//ajax end
+} //
+
+function multiple_projects(obj){
+	let projects = '';
+	obj.map((tae)=>{
+		projects = `${tae.opt_mgr} ,${tae.field_engr} ,${tae.mtrls_engr} ,${tae.foreman} ,${tae.wrh_incharge},${tae.eqpt_incharge},${tae.safety_officer},${tae.timekeeper} `
+	})
+	return projects;
+}
 
 function table_row_view(id){
 	reset();

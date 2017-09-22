@@ -50,29 +50,3 @@ function(isConfirm){
 });
 
 }
-/*
-function saves1()
-{
-
-swal({
-  title: "Save And proceed?",
-  text:"Make sure your input are all correct",
-  type: "info",
-  showCancelButton: true,
-  confirmButtonColor: "#DD6B55",
-  confirmButtonText: "Yes",
-  cancelButtonText: "No",
-  closeOnConfirm: false,
-  closeOnCancel: false
-},
-function(isConfirm){
-  if (isConfirm) {
-    swal("", "Saved", "success");
-     window.location="../../../view/transaction/PM/main.php";
-  } else {
-    swal("", "Cancelled", "error");
-  }
-});
-
-}
-*/
