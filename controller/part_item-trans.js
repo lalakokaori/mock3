@@ -27,7 +27,7 @@ if(table==1){
 		$.ajax ({
 			type: "POST",
 			url: "../../../model/part_item-trans/populate_table_part.php",
-			data:"types="+test ,
+			data:"cont_id="+cont_id ,
 			dataType: 'json',
 			cache: false,
 		success: function(s)
@@ -40,7 +40,7 @@ if(table==1){
 							([s[i][0],s[i][1],s[i][2],s[i][3],
 
 
-				//'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
+				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
 				'<button data-toggle="tooltip" onclick="table_row_del(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs  btn-danger" title="Delete" id="del"> <i class="fa fa-trash"></i>Delete </button>',
 					],false);
 					table_category.fnDraw();
@@ -55,7 +55,7 @@ if(table==1){
 					$.ajax ({
 			type: "POST",
 			url: "../../../model/part_item-trans/populate_table_pay_item.php",
-			data:"types="+test ,
+			data:"cont_id="+cont_id ,
 			dataType: 'json',
 			cache: false,
 			success: function(s)

@@ -1,4 +1,6 @@
 <?php include('../../../controller/master/log.php');
+$types=$_GET["contract"];
+echo'<input type="hidden" id="type" value="'.$types.'">';
 
 ?>
 
@@ -116,6 +118,7 @@
                                         <th>Percent%</th>
                                         <th>progress</th>
                                         <th></th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -156,7 +159,7 @@
 </div>
 
 <script type="text/javascript">
-    var test=$("#f_id").val();
+    var cont_id=$("#type").val();
 
 </script>
  <script src="../../../controller/part_item-trans.js" type="text/javascript"></script>

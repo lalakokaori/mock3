@@ -1,10 +1,11 @@
 <?php
     include('../master/connect.php');
+  $id = $_POST['cont_id'];
 
 
-    $sql = "SELECT pt.part_id,p.part_desc,percent,progress FROM `part-trans` as pt,part as p group by part_id";
+    $sql = "SELECT pt.part_id,p.part_desc,percent,progress FROM `part-trans` as pt,part as p where contract_id=? group by part_id";
   $q = $conn->prepare($sql);
-  $q -> execute();
+  $q -> execute(array($id));
   $browse = $q -> fetchAll();
   foreach($browse as $fetch)
   {
