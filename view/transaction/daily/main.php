@@ -62,6 +62,51 @@
                                             <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
                                         </div>
                                         <div class="modal-body">
+                                        
+<div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
+
+
+ <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+    <label><font color="darkred">*</font></label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_ID" required>
+  </div>
+ <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+    <label><font color="darkred">*</font>Name</label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_name" required>
+  </div>
+ <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
+    <label><font color="darkred">*</font>Job</label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_job" required>
+  </div>
+
+
+
+
+
+
+
+
+</div> <!-- /.row -->
+   
+                                        </div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         <div class="modal-footer">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+//activities
+       <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                        </div>
+                                        <div class="modal-body">
                                            <?php include('main_form.html'); ?>
                                         </div>
 
@@ -73,9 +118,47 @@
                                         </div>
                                     </div>
                                 </div>
+//manpower
+       <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                           <?php include('main_form.html'); ?>
+                                        </div>
 
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
 
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         <div class="modal-footer">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+//used
+       <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">Employee Form </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                           <?php include('main_form.html'); ?>
+                                        </div>
 
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         <div class="modal-footer">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+//recieve                            
 
 
 <!--------------------------modal end------------------------------------------>
@@ -103,7 +186,15 @@
                       <label id="clerkErr"  ><font color="darkred">*</font>Day :</label>
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                       <input id="clerk" type="text" name="clerk" onblur="checkClerk(this.value)" onfocus="checkClerk(this.value)"  class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+                       <select>
+                        <option>Monday</option>
+                        <option>Yueday</option>
+                        <option>Wednesday</option>
+                        <option>Thursdaty</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                      </select>
                       </div>    
                       <input type='hidden' id="chkClerk" value='no-match'>
                     </div> <!-- /.col-->  <!--Customer Field-->                 
@@ -121,26 +212,21 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green" data-target="#myModal" 
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal" onclick="reset();" 
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
                                text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
                           </h4>                            
                         </div>    
                   </div><!--/.row-->
+                  <label id="custnameErr" ><font color="darkred">*</font>Work Performed Today</label>
                   <div class="row" style="margin-top:25px">
                   <div class="col-sm-4 col-xs-12">
-                          <table id="bTable" class="table table-condensed table-bordered table-hover table-striped" >
+                          <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
                             <thead>
-                              <th style="width:180px">Work Performed Today</th>
-                              <th></th>                         
+                              <th>Activities</th>                         
+                              <th>Station</th>                         
+                              <th>Volume</th>                         
                             </thead>
-                            <tbody>
-                              <tr> <td>Activities</td> <td></tr>
-                              <tr> <td>Station</td> <td></tr>                              
-                              <tr> <td>Volume</td> <td></tr>
-                                                            
-                              
-                            </tbody>
                             
                             <tbody></tbody>            
                           </table> 
@@ -185,7 +271,7 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green" 
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal1" onclick="reset();" 
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
                                text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
                           </h4>                            
@@ -194,19 +280,13 @@
 
                   <div class="row" style="margin-top:25px">
                   <div class="col-sm-4 col-xs-12">
-                          <table id="bTable" class="table table-condensed table-bordered table-hover table-striped" >
+                          <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
                             <thead>
                               <th style="width:180px">Manpower</th>
                               <th></th>                         
-                            </thead>
-                            
-                                                   
-                              <tr> <td></td> <td></tr>
-                                                            
-                              
-                            </tbody>
-                            
-                            <tbody></tbody>            
+                            </thead>                            
+                            <tbody>
+                            </tbody>            
                           </table> 
                   </div> <!-- /. col --> 
                   </div>
@@ -217,7 +297,7 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green" 
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal2" onclick="reset();" 
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
                                text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
                           </h4>                            
@@ -225,17 +305,14 @@
                   </div><!--/.row-->
                   <div class="row" style="margin-top:25px">
                   <div class="col-lg-10 col-xs-12">
-                          <table  class="table table-condensed table-bordered table-hover table-striped" >
+                          <table id="useTable" class="table table-condensed table-bordered table-hover table-striped" >
                             <thead>
                               <th  style="width:550px">Materials/Lubricants/Fuel Used</th>
                               <th  style="width:180px">Quantity</th>    
                               <th  style="width:180px">Equipment Used</th> 
                               <th  style="width:180px">Utilization</th>                      
                             </thead>
-                            <tbody>
-                              <tr > <td></td> <td></td> <td></td> <td></td></tr>
-                             
-                            </tbody>
+
                             
                             <tbody></tbody>            
                           </table> 
@@ -250,7 +327,7 @@
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
-                               <button id="btn_save" role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green" 
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal3" onclick="reset();" 
                                style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
                                text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
                           </h4>                            
@@ -258,16 +335,12 @@
                   </div><!--/.row-->
                   <div class="row" style="margin-top:25px">
                   <div class="col-lg-10 col-xs-12">
-                          <table id="bTable" class="table table-condensed table-bordered table-hover table-striped" >
+                          <table id="recTable" class="table table-condensed table-bordered table-hover table-striped" >
                             <thead>
                               <th  style="width:550px">Materials/Equipment/Documents Received</th>
                               <th  style="width:180px">Quantity</th>    
                                                
                             </thead>
-                            <tbody>
-                              <tr > <td></td> <td></td></tr>
-                             
-                            </tbody>
                             
                             <tbody></tbody>            
                           </table> 
@@ -352,6 +425,7 @@ window.location='../../transaction/steps/main.php
               </div>
               </div>
               </div><!--//first panel body-->
+
 
               </div>
             </section>
