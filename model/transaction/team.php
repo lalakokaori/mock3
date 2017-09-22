@@ -9,7 +9,7 @@
     $Warehouse=$_POST['Warehouse'];
     $Foreman=$_POST['Foreman'];
     $mat=$_POST['mat'];
-    $cont_id=$_SESSION['cont_id'];
+    $cont_id=$_POST['cont_id'];
     //$period=$_POST['period'];
 
 

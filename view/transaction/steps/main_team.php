@@ -1,4 +1,7 @@
-<?php include('../../../controller/master/log.php');?>
+<?php include('../../../controller/master/log.php');
+$v=$_GET["contract"]; 
+?>
+<input type="hidden" name="cont_id" value="<?=$v?>">
 <!---->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,7 +17,6 @@
                     <h4 class="page-head-line">Project Team</h4>
                         <div class="panel-body">
 
-
 <div id="step-2">
   
             <p>
@@ -25,7 +27,6 @@
 
                         </div>
                         <div class="panel-body">
-                          
              Operations Manager <span class="required">*</span>
               </label>
               <select id="OM" class="form-control" required="">

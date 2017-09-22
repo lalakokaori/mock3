@@ -33,7 +33,6 @@
                 <div class="tab-content">
                     <div class="tab-pane fade active in" id="cat-pills">
                     <br />
-                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#cat">Add</button>
                                     <h4>Contract</h4>
                         <div class="table-responsive">
                             <table id="table_main" class="table table-striped table-bordered table-hover">
