@@ -66,7 +66,7 @@ if(table==1){
 						{
 							//if(s[i][2]=='inactive'){enability='disabled'}
 							table_subcategory.fnAddData
-							([s[i][1],s[i][2],s[i][3],s[i][4],
+							([s[i][1],s[i][2],s[i][3],s[i][4],s[i][4],
 
 
 				'<button data-toggle="tooltip" onclick="table_row_view(this.value,0)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" > <i class="fa fa-eye"></i>View</button>',
@@ -320,7 +320,7 @@ if(validate_form(1)==true){}
 else{
 
 	var category =$('#modal_equip_type').val();
-	var id =test;
+	var id =cont_id ;
 	var type =$('#f_type_percent').val();
 
 
@@ -396,7 +396,7 @@ else{
 
 	var category =$('#modal_category').val();
 	var subcate=$('#f_type_subcat').val();
-	var type =test;
+	var id =cont_id 
 
 
 	var dataString = 'category='+category+'&subcategory='+ subcate+'&type='+ type;
