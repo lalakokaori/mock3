@@ -1,6 +1,7 @@
 <?php
      include('../master/connect.php');
  
+ $id = trim($_POST['id']);
  $code = trim($_POST['code']);
  $desc = trim($_POST['desc']);
  $part = trim($_POST['part']);

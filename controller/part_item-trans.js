@@ -38,7 +38,7 @@ if(table==1){
 					for(var i = 0; i < s.length; i++)
 						{
 							table_category.fnAddData
-							([s[i][0],s[i][1]+" "+s[i][2],s[i][3],
+							([s[i][0],s[i][1],s[i][2],s[i][3],
 
 
 				'<button data-toggle="tooltip" onclick="table_row_view(this.value,1)" value='+s[i][0]+' data-toggle="modal" class="btn btn-xs " title="VIEW /Edit" id="view" > <i class="fa fa-eye"></i>View</button>',
@@ -396,9 +396,12 @@ $('#btn_save1').click(function(){
 if(validate_form(0)==true){}
 else{
 
-	var category =$('#modal_category').val();
-	var subcate=$('#f_type_subcat').val();
-	var id =cont_id 
+		var code = $('#f_code').val();
+		var part = $('#f_part').val();
+		var id =cont_id 
+		var desc = $('#f_desc').val();
+		var dataString = 'code='+code+'&part='+part+'&desc='+desc+'&id='+id;
+
 
 
 	var dataString = 'category='+category+'&subcategory='+ subcate+'&type='+ type;
