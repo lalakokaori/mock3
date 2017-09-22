@@ -17,11 +17,57 @@
 
         <div id="step-2">
             <h2 class="StepTitle">Add subcontractor</h2>
+            <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table id="table_subcontractor" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th width="20%">Company </th>
+                                        <th>Contact Person</th>
+                                        <th>Contact Number</th>
+                                        <th>Company Contact</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             
 
         </div>
         <div id="step-3">
             <h2 class="StepTitle">Add Consultant</h2>
+          <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table id="table_consultant" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th width="20%">Company </th>
+                                        <th>Contact Person</th>
+                                        <th>Contact Number</th>
+                                        <th>Company Contact</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
           </div>  
                     </div>
               </div>

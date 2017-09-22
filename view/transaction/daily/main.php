@@ -11,6 +11,8 @@
                 <!--**********************************-->
             <div class="row" style="padding-top: 25px;">
                 <div class="col-md-12">
+<<<<<<< HEAD
+=======
                     <h4 class="page-head-line">DAILY ACCOMPLISHMENT REPORT</h4>
                         <div class="panel-body">
                           <div class="row">
@@ -35,6 +37,7 @@
                         
 
                       </div>
+>>>>>>> mobile
 
 <div class="row">
                     <div class="col-md-6 col-lg-12">
@@ -65,6 +68,7 @@
                   <div class="row" style="margin-top:25px">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Project Name :</label>
                       <div class="input-group" style="margin-top:3px">
@@ -79,6 +83,9 @@
                     
                     <div class="col-md-3 col-xs-12" >
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+a5fb6c88487494a0570e361c9e9764dde6939613
+>>>>>>> berns_edit
                       <label id="transdateErr" ><font color="darkred">*</font>Order Date :</label>    
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
@@ -137,6 +144,7 @@
                   <div class="row" style="margin-top:25px">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Activities :</label>
                       <div class="input-group" style="margin-top:3px">
@@ -149,6 +157,9 @@
                        <span class="input-group-addon">AM</i></span>
                        <input type="number" placeholder=" Search Name ">
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+a5fb6c88487494a0570e361c9e9764dde6939613
+>>>>>>> berns_edit
                       </div>    
                      
                       <div class="input-group" style="margin-top:3px">
@@ -157,6 +168,7 @@
                       </div>  
                     </div> <!-- /.col-->  <!--Customer Field-->
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Station :</label>
@@ -197,6 +209,9 @@
 
                     
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+a5fb6c88487494a0570e361c9e9764dde6939613
+>>>>>>> berns_edit
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
@@ -227,6 +242,7 @@
                   </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Manpower :</label>
                       <div class="input-group" style="margin-top:3px">
@@ -242,6 +258,9 @@
                     </div> <!-- /.col-->  <!--Customer Field-->
 =======
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+ a5fb6c88487494a0570e361c9e9764dde6939613
+>>>>>>> berns_edit
 
                   <div class="row" style="margin-top:25px">
 
@@ -276,6 +295,7 @@
                      
                     </div> <!-- /.col-->  <!--Customer Field-->           
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                      <div class="row" style="margin-top:25px">
 
@@ -319,6 +339,9 @@
 
                   
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+a5fb6c88487494a0570e361c9e9764dde6939613
+>>>>>>> berns_edit
 
                   <div class="col-sm-1 col-xs-2">
                           <h4 class="box-title">
@@ -329,6 +352,7 @@
                         </div>    
                   </div><!--/.row-->
                   <div class="row" style="margin-top:25px">
+<<<<<<< HEAD
 <<<<<<< HEAD
 
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
@@ -396,6 +420,9 @@
 =======
                   
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+ a5fb6c88487494a0570e361c9e9764dde6939613
+>>>>>>> berns_edit
 </div>
 </div>
 </div>
@@ -425,6 +452,7 @@
                     <div class="col-md-3 col-xs-12" id="custnameDiv">
                       <label id="custnameErr" ><font color="darkred">*</font>Prepared by :</label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                       <div class="input-group" style="margin-top:3px">
                        <span class="input-group-addon"></span>
                        <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
@@ -433,6 +461,9 @@
                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
                        <input type="text" placeholder=" Search Name " disabled=""> 
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+a5fb6c88487494a0570e361c9e9764dde6939613
+>>>>>>> berns_edit
                       </div>   
                       <div class="input-group" style="margin-top:3px">
                      
@@ -489,9 +520,13 @@ window.location='../../transaction/steps/main.php
    <script src="../../../controller/steps-add.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> ede91bdd526a7b2c7bfad4364df9fe3b094bd96f
+=======
+>>>>>>> bb011c4b92dfb47bca6dff77c947faba64f36333
+>>>>>>> berns_edit
 </body>
 </html>
 

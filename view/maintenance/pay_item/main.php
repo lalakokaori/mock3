@@ -77,7 +77,7 @@
                 </div>
                  <!-- End  LABOR POPULATE TABLE -->
 </div>
-    <script src="../../../controller/PIN.js" type="text/javascript"></script>
+    <script src="../../../controller/pay_item.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
 </body>
 </html>

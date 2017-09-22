@@ -1,5 +1,14 @@
+<<<<<<< HEAD:view/transaction/daily/main2.php
+<?php
+ini_set('display_errors',1);
+error_reporting(E_ALL & ~E_NOTICE);
+
+
+?>
+=======
 <?php include('../../../controller/master/log.php');?>
 <!---->
+>>>>>>> bb011c4b92dfb47bca6dff77c947faba64f36333:view/transaction/daily/main2.php
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 

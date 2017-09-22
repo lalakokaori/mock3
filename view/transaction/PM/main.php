@@ -40,10 +40,10 @@
                                 <thead>
                           <tr>
                           <th style="width: 1%">ID</th>
-                          <th style="width: 20%">Contract name</th>
-                          <th>Client</th>
-                          <th>Reference No.</th>
-                          <th>Contract Amount</th>
+                          <th style="width: 30%">Contract name</th>
+                          <th style="width: 15%">Client</th>
+                          <th style="width: 5%">Reference No.</th>
+                          <th style="width: 5%">Contract Amount</th>
                           <th style="width: 20%">#Action</th>
                         </tr>
                                 </thead>
@@ -58,10 +58,10 @@
                             <table id="table_submain" class="table table-striped table-bordered table-hover" >
                                 <thead>
                                     <tr>
-                                        <th>Contract ID</th>
-                                        <th>Project Name</th>
-                                        <th>Team</th>
-                                        <th>Reports</th>
+                                        <th style="width: 1%">Contract ID</th>
+                                        <th style="width: 30%">Project Name</th>
+                                        <th style="width: 15%">Team</th>
+                                        <th style="width: 10%">Reports</th>
 
 
                                     </tr>
