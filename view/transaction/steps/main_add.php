@@ -15,107 +15,60 @@
                         <div class="panel-body">
 
 
-<div id="step-2">
+        <div id="step-2">
             <h2 class="StepTitle">Add subcontractor</h2>
-            <p>
+            <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table id="table_subcontractor" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th width="20%">Company </th>
+                                        <th>Contact Person</th>
+                                        <th>Contact Number</th>
+                                        <th>Company Contact</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="op-mgr">Operations Manager <span class="required">*</span>
-              </label>
-              <input type="text" id="op-mgr" required="required" class="form-control col-md-7 col-xs-12">
-            <br>
-
-            <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-engr">Project Engineer/Field Engineer <span class="required">*</span>
-            </label>
-            <input type="text" id="proj-engr" required="required" class="form-control col-md-7 col-xs-12">
-           <br>
-
-           <label class="control-label col-md-24 col-sm-12 col-xs-12" for="mtrl-engr">Materials Engineer <span class="required">*</span>
-           </label>
-           <input type="text" id="mtrl-engr" required="required" class="form-control col-md-7 col-xs-12">
-          <br>
-
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="foreman">Foreman <span class="required">*</span>
-          </label>
-          <input type="text" id="foreman" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="wrh-in-charge">Warehouse-in-Charge <span class="required">*</span>
-          </label>
-          <input type="text" id="wrh-in-charge" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="eqpt-in-charge">Equipment-in-Charge <span class="required">*</span>
-          </label>
-          <input type="text" id="eqpt-in-charge" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="safety-officer">Safety Officer <span class="required">*</span>
-        </label>
-        <input type="text" id="safety-officer" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="timekeeper">Timekeeper <span class="required">*</span>
-        </label>
-        <input type="text" id="timekeeper" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-         <br>
-         <br>
-
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            
 
         </div>
         <div id="step-3">
             <h2 class="StepTitle">Add Consultant</h2>
-            <p>
+          <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table id="table_consultant" class="table table-striped table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th width="20%">Company </th>
+                                        <th>Contact Person</th>
+                                        <th>Contact Number</th>
+                                        <th>Company Contact</th>
+                                        <th>Address</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="op-mgr">Operations Manager <span class="required">*</span>
-              </label>
-              <input type="text" id="op-mgr" required="required" class="form-control col-md-7 col-xs-12">
-            <br>
-
-            <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-engr">Project Engineer/Field Engineer <span class="required">*</span>
-            </label>
-            <input type="text" id="proj-engr" required="required" class="form-control col-md-7 col-xs-12">
-           <br>
-
-           <label class="control-label col-md-24 col-sm-12 col-xs-12" for="mtrl-engr">Materials Engineer <span class="required">*</span>
-           </label>
-           <input type="text" id="mtrl-engr" required="required" class="form-control col-md-7 col-xs-12">
-          <br>
-
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="foreman">Foreman <span class="required">*</span>
-          </label>
-          <input type="text" id="foreman" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="wrh-in-charge">Warehouse-in-Charge <span class="required">*</span>
-          </label>
-          <input type="text" id="wrh-in-charge" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="eqpt-in-charge">Equipment-in-Charge <span class="required">*</span>
-          </label>
-          <input type="text" id="eqpt-in-charge" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="safety-officer">Safety Officer <span class="required">*</span>
-        </label>
-        <input type="text" id="safety-officer" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="timekeeper">Timekeeper <span class="required">*</span>
-        </label>
-        <input type="text" id="timekeeper" required="required" class="form-control col-md-7 col-xs-12">
-         <br>
-
-
-            <div class="col-md-2 "><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>             
-
-            <div class="col-md-4" >  <br><button id="btn_save" class="btn btn-block btn-success btn-lg" onclick="window.location='../../transaction/steps/main_team.php';">Next</button></div>
-
-            </p>
-
-        </div>
-
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+          </div>  
                     </div>
               </div>
               </div><!--//first panel body-->

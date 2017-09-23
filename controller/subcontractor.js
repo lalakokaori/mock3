@@ -72,7 +72,7 @@ $('#btn_reset').click(function(){ reset(); tae();})
 function validate_form(){
 err = false;
 
-if($('#f_name').val()=='none'){
+if($('#f_name').val()==''){
 	err = true;
 	$('#f_name_div').addClass('has-error');
 }
@@ -80,45 +80,42 @@ else
 	$('#f_name_div').removeClass('has-error');
 
 
-		if($('#f_amount').val()==''){
+		if($('#f_personnel').val()==''){
 			err = true;
-			$('#f_amount_div').addClass('has-error');
+			$('#f_personnel_div').addClass('has-error');
 		}
 		else
-			$('#f_amount_div').removeClass('has-error');
+			$('#f_personnel_div').removeClass('has-error');
 
-			if($('#f_contact').val()=='none'){
-				err = true;
-				$('#f_contact_div').addClass('has-error');
-			}
+		if($('#f_contact').val()=='none'){
+		    err = true;
+		    $('#f_contact_div').addClass('has-error');
+		}
 			else
 				$('#f_contact_div').removeClass('has-error');
 
-		if($('#f_scope').val()==''){
+		if($('#f_personnelno').val()==''){
+			err = true;
+			$('#f_personnelno_div').addClass('has-error');
+		}
+		else
+			$('#f_personnelno_div').removeClass('has-error');
+
+		if($('#f_contact').val()==''){
+			err = true;
+			$('#f_contact_div').addClass('has-error');
+		}
+		else
+			$('#f_contact_div').removeClass('has-error');
+
+		if($('#f_scope').val()=='none'){
 			err = true;
 			$('#f_scope_div').addClass('has-error');
-			}
+		}
 		else
 			$('#f_scope_div').removeClass('has-error');
-		if($('#f_billing').val()==''){
-			err = true;
-			$('#f_billing_div').addClass('has-error');
-			}
-		else
-			$('#f_billing_div').removeClass('has-error');
-		if($('#f_duration').val()==''){
-			err = true;
-			$('#f_duration_div').addClass('has-error');
-			}
-		else
-			$('#f_duration_div').removeClass('has-error');
-		if($('#f_personnel').val()==''){
-			err = true;
-			$('#f_personel_div').addClass('has-error');
-			}
-		else
-			$('#f_personel_div').removeClass('has-error');
 
+		
 
 
 
@@ -133,24 +130,17 @@ return err;
 function reset(){
 $('#btn_save').val('create');
 
-		$('#f_name').val('');
-		$('#f_amount').val('');
+		$('#f_name').val('');		
 		$('#f_contact').val('');
 		$('#f_scope').val('none');
 		$('#f_personnelno').val('');
 		$('#f_personnel').val('');
 
- 		$('#f_name').removeClass('has-error');
-		$('#f_amount').removeClass('has-error');
-		$('#f_contact').removeClass('has-error');
-		$('#f_scope').removeClass('has-error');
-		$('#f_billing').removeClass('has-error');
-		$('#f_duration').removeClass('has-error');
-		$('#f_personnel').removeClass('has-error');
-
-
-
-
+ 		$('#f_name_div').removeClass('has-error');		
+		$('#f_contact_div').removeClass('has-error');
+		$('#f_scope_div').removeClass('has-error');	
+		$('#f_personnel_div').removeClass('has-error');
+		$('#f_personnelno_div').removeClass('has-error');
 
 
 

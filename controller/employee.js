@@ -91,6 +91,13 @@ function validate_form(){
 	}
 	else
 		$('#f_email_div').removeClass('has-error');
+	if($('#f_add').val()==''){
+		err = true;
+		$('#f_add_div').addClass('has-error');
+	}
+	else
+		$('#f_add_div').removeClass('has-error');
+
 
 	return err;
 }
@@ -103,13 +110,14 @@ function reset(){
 	$('#f_name').val('');
 	$('#f_cont').val('');
 	$('#f_email').val('');
-	//$('#modal_user_type').
+	$('#f_add').val('');
 
 
 	$('#f_ID_div').removeClass('has-error');
 	$('#f_name_div').removeClass('has-error');
 	$('#f_cont_div').removeClass('has-error');
 	$('#f_email_div').removeClass('has-error');
+	$('#f_add').removeClass('has-error');
 
 
 

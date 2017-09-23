@@ -59,7 +59,7 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Company </th>
+                                        <th width="20%">Company </th>
                                         <th>Contact Person</th>
                                         <th>Contact Number</th>
                                         <th>Company Contact</th>

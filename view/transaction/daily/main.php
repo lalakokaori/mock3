@@ -1,223 +1,444 @@
-<?php include('../../../controller/master/log.php');
-
-
-?>
-<style type="text/css">
-    no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url(../../../assets/img/2.gif) center no-repeat #fff;
-}
-</style>
-
+<?php include('../../../controller/master/log.php');?>
 <!---->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <!--[if IE]>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <![endif]-->
-    <title>Bidding System with Monitoring Projects System </title>
-    <!-- BOOTSTRAP CORE STYLE -->
-    <link href="../../../assets/css/bootstrap.css" rel="stylesheet" />
-    <!-- FONT AWESOME ICONS  -->
-    <link href="../../../assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- CUSTOM STYLE  -->
-    <link href="../../../assets/css/style.css" rel="stylesheet" />
-     <!-- HTML5 Shiv and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-<script src="../../../plugins/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../../../plugins/sweetalert/dist/sweetalert.css">
-     <!--JQUERY BELOW-->
-    <script src="../../../plugins/jQuery/jQuery-2.1.4.min.js"></script>
-    <!--Datatables BELOW-->
-    <script src="../../../plugins/datatables/jquery.dataTables.js" type="text/javascript"></script>
-    <!--Datatables Bootsrap CSS BELOW -->
-    <script src="../../../plugins/datatables/dataTables.bootstrap.js" type="text/javascript"></script>
-    <!--Datatables Javascript BELLOW -->
-    <link href="../../../plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+<?php include("../../../view/master/design.html");//header and design ?>
 
-    <script src="../../../controller/master/logout.js" type="text/javascript"></script>
-    
-</head>
+
 <body>
 <div class="se-pre-con"></div>
-    <!-- HEADER END-->
-    <div class="navbar navbar-inverse set-radius-zero" style="background-image:url(../../../assets/img/red.jpg); height:200px;">
-        <div class="container">
-            <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <a class="navbar-brand" href="index.php">
-
-                    <img src="../../../assets/img/logo.png" style="weight:135px; height:120px" />
-
-
-                </a>
-
-            </div>
-            <div style=" text-align: center; font-size:60pt;
-    
-    color:#FFFFFF;">
-             <p>&nbsp;</p>
-              <p><h1 style="font-family: 'Cinzel'; font-size: 75px ">PERSAN Construction Inc.</h1></p>
-            </div>
-            <div class="left-div">
-                <div class="user-settings-wrapper">
-                    <ul class="nav">
-
-
-
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- LOGO HEADER END-->
-    <section class="menu-section">
-        <div class="container">
-            <div class="row">
-                    <?php include("../../../view/master/sidebar1.php"); ?>
-
-
-            </div>
-        </div>
-    </section>
-    <!-- MENU SECTION END-->
-  <!--  <div class="content-wrapper">
-        <div class="container">
-            <div class="row">
+<?php include("../../../view/master/design_sidebar.php");//header and design ?>
+                <!--**********************************-->
+            <div class="row" style="padding-top: 25px;">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">EQUIPMENT</h4>
-
-                </div>
-
-            </div>
-            <div class="row">-->
-
-<!--**********************************-->
-<div class="row" style="padding-top: 25px;">
-                <div class="col-md-12" >
-                    <h4 class="page-head-line">Equipment</h4>
-
-
+                    <h4 class="page-head-line">DAILY ACCOMPLISHMENT REPORT</h4>
                         <div class="panel-body">
+                          <div class="row">
+                        <div class="col-sm-1 col-xs-2">                        
+                          <h4 class="box-title" style="margin-left:13px">
+                               <a href="#" onclick="return confirmCancel()" role="button" data-toggle='tooltip' title="Cancel" data-placement='bottom' class="btn text-red"
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white"> <i class="ion-android-close"></i> </a>                               
+                          </h4>     
+                        </div> 
 
-                            
-                            <button onclick="window.location.href='material/main.php'" class="btn btn-primary btn-lg">
-                              Material 
-                            </button>
-                            <button onclick="window.location.href='equipment/main.php'" class="btn btn-primary btn-lg">
-                              Equipment 
-                            </button>
-                            <button onclick="window.location.href='manpower/main.php'" class="btn btn-primary btn-lg">
-                              Manpower 
-                            </button>
-            </div>
-                </div>
+                        <div class="col-sm-1 col-xs-2">
+                          <h4 class="box-title">
+                               <button role="button" data-toggle='tooltip' title="Save Record" data-placement='bottom' class="btn text-green"
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white; " disabled > <i class="ion-android-done"></i> </button>                               
+                          </h4>                             
+                        </div>      
+                                           
+                        <div class="col-xs-6"></div> <!--empty space-->
 
-                    <div class="panel panel-default">
                         
+
+                      </div>
+
+<div class="row">
+                    <div class="col-md-6 col-lg-12">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+<div class="wrapper">
+      
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1>
+           Report
+            <small>DAILY ACCOMPLISHMENT REPORT</small>
+          </h1>                              
+        </section>
+
+<!---------------------------modal start------------------------------------------>
+                     
                             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">DAILY REPORT FORM</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Activity </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                        
+<div class="row" style="margin-bottom:5px"> <!-- ROW 1 -->
+
+
+ <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+    <label><font color="darkred">*</font>Part</label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_ID" required>
+  </div>
+ <div class="col-sm-4 col-xs-12" id="f_ID_div" class='form-group'>
+    <label><font color="darkred">*</font>Item</label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_ID" required>
+  </div>
+ <div class="col-sm-4 col-xs-12" id="f_name_div" class='form-group'>
+    <label><font color="darkred">*</font>Name</label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_name" required>
+  </div>
+ <div class="col-sm-4 col-xs-12" id="f_job_div" class='form-group'>
+    <label><font color="darkred">*</font>Qty</label> <!-- Category -->
+   <input type="text" class="form-control input-lg" id="f_job" required>
+  </div>
+
+
+
+
+
+
+
+
+</div> <!-- /.row -->
+   
+                                        </div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         <div class="modal-footer">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+//activities
+       <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">Manpower</h4>
                                         </div>
                                         <div class="modal-body">
                                            <?php include('main_form.html'); ?>
                                         </div>
-                                        <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+
                                          <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
-                                        <div class="modal-footer">
-
-
+                                         <div class="modal-footer">
                                         </div>
-                                    
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+//manpower
+       <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">Used</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                           <?php include('main_form.html'); ?>
+                                        </div>
 
-                     <!-- End Modals-->
-<!--**********************************-->
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         <div class="modal-footer">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+//used
+       <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">Reciecve</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                           <?php include('main_form.html'); ?>
+                                        </div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+
+                                         <div class="col-md-2 col-xs-12"><br><button id="btn_save" class="btn btn-block btn-success btn-lg">Save</button></div>
+                                         <div class="modal-footer">
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+//recieve                            
 
 
-            </div>
+<!--------------------------modal end------------------------------------------>
+        <!-- Main content -->
+        <section class="content">
+          
+         
 
-            <div class="row">
+          <div class="row" >              
+          <div class="col-lg-12 col-sm-12 col-xs-12">
+              <div class="box box-solid">
+                <div class="box-header">     
+                  <div class="row" style="margin-top:25px">
+
+                    
+                    <div class="col-md-3 col-xs-12" >
+                      <label id="transdateErr" ><font color="darkred">*</font>Order Date :</label>    
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input id="transdate" value="<?php echo"".date('Y-m-d')."" ?>" type="date" class="form-control" >
+                      </div>    
+                    </div> <!-- /.col-->  
+
+                    <div class="col-md-3 col-xs-12" id="clerkDiv">
+                      <label id="clerkErr"  ><font color="darkred">*</font>Day :</label>
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                       <select>
+                        <option>Monday</option>
+                        <option>Yueday</option>
+                        <option>Wednesday</option>
+                        <option>Thursdaty</option>
+                        <option>Friday</option>
+                        <option>Saturday</option>
+                        <option>Sunday</option>
+                      </select>
+                      </div>    
+                      <input type='hidden' id="chkClerk" value='no-match'>
+                    </div> <!-- /.col-->  <!--Customer Field-->                 
+
+                    
+
+                                   
+                  </div><!--/.row-->
 
 
-              <!--   EQUIPMENT POPULATE TABLE -->
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table id="table_main" class="table table-striped table-bordered table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
 
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                 <!-- End EQUIPMENT POPULATE TABLE -->
+                  <div class="row" style="margin-top:25px">
+
+                  
+
+                  <div class="col-sm-1 col-xs-2">
+                          <h4 class="box-title">
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal" onclick="reset();" 
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+                          </h4>                            
+                        </div>    
+                  </div><!--/.row-->
+                  <label id="custnameErr" ><font color="darkred">*</font>Work Performed Today</label>
+                  <div class="row" style="margin-top:25px">
+                  <div class="col-sm-4 col-xs-12">
+                          <table id="ActTable" class="table table-condensed table-bordered table-hover table-striped" >
+                            <thead>
+                              <th>Activities</th>                         
+                              <th>Station</th>                         
+                              <th>Volume</th>                         
+                            </thead>
+                            
+                            <tbody></tbody>            
+                          </table> 
+                  </div> <!-- /. col --> 
+                  </div>
+
+                  <div class="row" style="margin-top:25px">
+
+                    <div class="col-md-3 col-xs-12">
+                      <label id="custnameErr" ><font color="darkred">*</font>Weather :</label>
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon">AM</i></span>
+                       <input type="text" placeholder=" Search Name ">
+                      </div>    
+                     
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon">PM</i></span>
+                       <input type="text" placeholder=" Search Name ">
+                      </div>  
+                    </div> <!-- /.col-->  <!--Customer Field-->
+
+                    <div class="col-md-3 col-xs-12" >
+                      <label id="transdateErr" ><font color="darkred">*</font>Toolbox Meeting Conducted ?</label>    
+                      <div class="input-group" style="margin-top:3px">
+                       
+                        <input type="radio"> Yes
+                        <br>
+                        <input type="radio"> No
+                      </div>    
+                    </div> <!-- /.col-->  
+
+                             
+
+                    
+
+                                   
+                  </div><!--/.row-->
+
+                  <div class="row" style="margin-top:25px">
+
+                    
+
+                  <div class="col-sm-1 col-xs-2">
+                          <h4 class="box-title">
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal1" onclick="reset();" 
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+                          </h4>                            
+                        </div>    
+                  </div><!--/.row-->
+
+                  <div class="row" style="margin-top:25px">
+                  <div class="col-sm-4 col-xs-12">
+                          <table id="manTable" class="table table-condensed table-bordered table-hover table-striped" >
+                            <thead>
+                              <th style="width:180px">Manpower</th>
+                              <th></th>                         
+                            </thead>                            
+                            <tbody>
+                            </tbody>            
+                          </table> 
+                  </div> <!-- /. col --> 
+                  </div>
+
+                  <div class="row" style="margin-top:25px">
+
+                  
+
+                  <div class="col-sm-1 col-xs-2">
+                          <h4 class="box-title">
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal2" onclick="reset();" 
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+                          </h4>                            
+                        </div>    
+                  </div><!--/.row-->
+                  <div class="row" style="margin-top:25px">
+                  <div class="col-lg-10 col-xs-12">
+                          <table id="useTable" class="table table-condensed table-bordered table-hover table-striped" >
+                            <thead>
+                              <th  style="width:550px">Materials/Lubricants/Fuel Used</th>
+                              <th  style="width:180px">Quantity</th>    
+                              <th  style="width:180px">Equipment Used</th> 
+                              <th  style="width:180px">Utilization</th>                      
+                            </thead>
+
+                            
+                            <tbody></tbody>            
+                          </table> 
+                  </div> <!-- /. col --> 
+                  </div>
+                     
+                    </div> <!-- /.col-->  <!--Customer Field-->           
+
+                   <div class="row" style="margin-top:25px">
+
+                  
+
+                  <div class="col-sm-1 col-xs-2">
+                          <h4 class="box-title">
+                               <button id="btn_save" data-toggle="modal" data-target="#myModal3" onclick="reset();" 
+                               style="box-shadow: 0px 3px 7px #888888; border-radius:100px; width:50px; height:50px; margin-bottom:5px; outline:none;
+                               text-align: center; font-size:25px; background-color:white; "> <i class="ion-android-done"></i>+</button>                            
+                          </h4>                            
+                        </div>    
+                  </div><!--/.row-->
+                  <div class="row" style="margin-top:25px">
+                  <div class="col-lg-10 col-xs-12">
+                          <table id="recTable" class="table table-condensed table-bordered table-hover table-striped" >
+                            <thead>
+                              <th  style="width:550px">Materials/Equipment/Documents Received</th>
+                              <th  style="width:180px">Quantity</th>    
+                                               
+                            </thead>
+                            
+                            <tbody></tbody>            
+                          </table> 
+                  </div> <!-- /. col --> 
+                  </div>
+                    </div> <!-- /.col-->  <!--Customer Field-->           
 </div>
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    &copy; 2017 Persan Construction Inc. | By : Students of Polytechnic University of San Juan Campus
-                </div>
+</div>
+</div>
 
-            </div>
+                  <div class="col-sm-1 col-xs-2">
+                                          
+                        </div>    
+                  </div><!--/.row-->
+
+                    <!-- address rows -->
+                    <div class="row"  style="margin-top:25px" id="pickupDiv">
+                      <div class="col-md-3 col-xs-12">
+                        <label id="pickupErr" ><font color="darkred">*</font>Problems Encountered :</label>     
+                        <textarea id="pickup" rows="2" class="form-control" style="resize:none"></textarea>
+                      </div> <!--/. col -->
+                  
+
+                    <div class="col-md-3 col-xs-12" id="deliveryDiv">
+                      <label id="deliveryErr" ><font color="darkred">*</font>Visitors :</label>     
+                      <textarea id="delivery" rows="2" class="form-control" style="resize:none"></textarea>
+                    </div> <!--/. -->
+
+                    
+                  </div> <!-- /. row -->
+
+                  <div class="row"  style="margin-top:25px" id="pickupDiv">
+                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                      <label id="custnameErr" ><font color="darkred">*</font>Prepared by :</label>
+                     <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                       <input type="text" placeholder=" Search Name " disabled=""> 
+                      </div>   
+                      <div class="input-group" style="margin-top:3px">
+                     
+                       
+                      </div>    
+
+                      <input type='hidden' id="chkCust" value="no-match">
+                    </div>
+
+                    <div class="col-md-3 col-xs-12" id="custnameDiv">
+                      <label id="custnameErr" ><font color="darkred">*</font>Approved by :</label>
+                      <div class="input-group" style="margin-top:3px">
+                       <span class="input-group-addon"></span>
+                       <input id="custname" type="text" name="custname"  onblur="checkCustomer(this.value)" onfocus="checkCustomer(this.value)" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder=" Search Name ">
+                      </div>   
+                      <div class="input-group" style="margin-top:3px">
+                     
+                       
+                      </div>    
+
+                      <input type='hidden' id="chkCust" value="no-match">
+                    </div>
+
+                    
+                  </div> <!-- /. row -->
+                  
+
+                                                                                                  
+                </div> <!--/.row-->
+                  
+
+                <hr>
+                <!--TABLES -->
+
+   
+                        </div>
+                        <div class="panel-body">
+
+              </div>
+              </div>
+              </div><!--//
+window.location='../../transaction/steps/main.php
+                2nd panel body-->
+
+              </div>
+              </div>
+              </div><!--//first panel body-->
+
+
+              </div>
+            </section>
+          </div>
         </div>
-    </footer>
-    <!-- FOOTER SECTION END-->
-    <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
-
-    <!-- BOOTSTRAP SCRIPTS  -->
-    <script src="../../../assets/js/bootstrap.js"></script>
-
-
-
-    <script src="../../../controller/equipments.js" type="text/javascript"></script>
-
-
-<script type="text/javascript">
-    $(window).load(function() {
-        // Animate loader off screen
-        $(".se-pre-con").fadeOut("slow");
-    });
-</script>
+      </div>
+   <script src="../../../controller/daily.js" type="text/javascript"></script>
+<?php include("../../../view/master/design_end.html");//?>
 </body>
 </html>
 
-<!---->
+

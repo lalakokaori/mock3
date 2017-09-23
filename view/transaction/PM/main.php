@@ -22,16 +22,27 @@
                               <h4 class="page-head-line">My Contracts</h4>
 
 
+                                                <!--pill tabs-->
+                     <ul class="nav nav-pills">
+                                <li class="active"><a href="#cat-pills" data-toggle="tab">Contract</a>
+                                </li>
+                                <li class=""><a href="#sub-pills" data-toggle="tab">Project</a>
+                                       </li>
+                            </ul>
+                            <!-- pill-->
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="cat-pills">
+                    <br />
+                                    <h4>Contract</h4>
                         <div class="table-responsive">
                             <table id="table_main" class="table table-striped table-bordered table-hover">
                                 <thead>
                           <tr>
                           <th style="width: 1%">ID</th>
-                          <th style="width: 20%">Contract name</th>
-                          <th>Client</th>
-                          <th>Reference No.</th>
-                          <th>Contract Start</th>
-                          <th>Contract Amount</th>
+                          <th style="width: 30%">Contract name</th>
+                          <th style="width: 15%">Client</th>
+                          <th style="width: 5%">Reference No.</th>
+                          <th style="width: 5%">Contract Amount</th>
                           <th style="width: 20%">#Action</th>
                         </tr>
                                 </thead>
@@ -40,6 +51,32 @@
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                    <div class="tab-pane fade" id="sub-pills"><br/>
+                    <div class="table-responsive">
+                            <table id="table_submain" class="table table-striped table-bordered table-hover" >
+                                <thead>
+                                    <tr>
+                                        <th style="width: 1%">Contract ID</th>
+                                        <th style="width: 30%">Project Name</th>
+                                        <th style="width: 15%">Team</th>
+                                        <th style="width: 10%">Reports</th>
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
 
 
 

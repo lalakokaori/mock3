@@ -8,7 +8,7 @@ error_reporting(E_ALL & ~E_NOTICE);
   ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include("view/master/design.html");//header and design
+<?php include("view/master/design2.html");//header and design
 if($_SESSION["persan_user_name"]=="" || $_SESSION["persan_user_type"]=="")
   {?>
     <script type="text/javascript">
@@ -81,7 +81,7 @@ setTimeout('Redirect()', 0);
             <li><a href="view/maintenance/scope/main.php">Scope of Work</a></li>
             <li><a href="view/maintenance/subcontractor/main.php">Subcontractor</a></li>
             <li><a href="view/maintenance/part/main.php">Part</a></li>
-            <li><a href="view/maintenance/PIN/main.php">Pay Item</a></li>
+            <li><a href="view/maintenance/pay_item/main.php">Items</a></li>
           </ul>
         </li>
 
@@ -103,7 +103,7 @@ setTimeout('Redirect()', 0);
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Records <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" style="background-color: grey;">
-           <li><a href="view/transaction/project/main.php">Contract Records</a></li>
+           <li><a href="view/transaction/project/main.php">Projects</a></li>
            <li><a href="view/transaction/photo/main.php">Photo Gallery</a></li>
            <li><a href="view/transaction/progress/main.php">Reports</a></li>
           </ul>
@@ -202,7 +202,7 @@ setTimeout('Redirect()', 0);
             <!--notification end-->
 
             </div>
-<?php include("view/master/design_end.html"); //footer?>  
+<?php include("view/master/design_end2.html"); //footer?>  
 </body>
 </html>
  

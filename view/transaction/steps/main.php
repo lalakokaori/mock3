@@ -26,12 +26,14 @@
 
             <p><br>
 
-            <div id="proj_name_div">
-              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-name">Project Name <span class="required">*</span>
+
+            
+
+              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-location">Contract Reference Number<span class="required">*</span>
               </label>
-              <input type="text" id="proj_name" required="required" class="form-control col-md-7 col-xs-12">
+              <input type="text"  required="required" disabled="disabled" value='<?=$_SESSION["name"];?>' class="form-control col-md-7 col-xs-12">
              <br><br>
-           </div><div id="proj_code_div">
+           <div id="proj_code_div">
               <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-code">Project Code <span class="required">*</span>
               </label>
               <input type="text" id="proj_code" required="required" class="form-control col-md-7 col-xs-12">
@@ -49,12 +51,7 @@
               </label>
               <input type="text"  required="required" disabled="disabled" value='<?=$_SESSION["ref"];?>' class="form-control col-md-7 col-xs-12">
              <br><br>
-            <div id="proj_start_div">
-            <label class="control-label col-md-24 col-sm-12 col-xs-12" for="cont-period">Start Date <span class="required">*</span>
-            </label>
-            <input type="date" id="proj_start" required="required"  class="form-control col-md-7 col-xs-12">
-           <br><br>
-         </div><div id="proj_ntp_div">
+             <div id="proj_ntp_div">
              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj_location">Date Of NTP <span class="required">*</span>
              </label>
             <input type="date" id="proj_ntp" required="required" class="form-control col-md-7 col-xs-12">
@@ -65,13 +62,12 @@
           <input type="date" id="proj_award" required="required" class="form-control col-md-7 col-xs-12">
          <br><br></div>
        <div id="proj_target_div">
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="date-target">Target Date <span class="required">*</span>
+        <label class="control-label col-md-24 col-sm-12 col-xs-12"  for="date-target">Target Date <span class="required">*</span>
         </label>
-        <input type="date" id="date_target" required="required" class="form-control col-md-7 col-xs-12">
-
+        <input type="date" id="date_target" required="required"  class="form-control col-md-7 col-xs-12">
      </div>
       </div>
-<br><br><br>
+  <input type="hidden" id="proj_name" required="required" value='<?=$_SESSION["name"];?>' class="form-control col-md-7 col-xs-12">
 
 
 

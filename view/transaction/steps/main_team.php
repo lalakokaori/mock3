@@ -1,4 +1,7 @@
-<?php include('../../../controller/master/log.php');?>
+<?php include('../../../controller/master/log.php');
+$v=$_GET["contract"]; 
+?>
+<input type="hidden" name="cont_id" value="<?=$v?>">
 <!---->
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -11,91 +14,111 @@
                 <!--**********************************-->
             <div class="row" style="padding-top: 25px;">
                 <div class="col-md-12">
-                    <h4 class="page-head-line">Project Manager</h4>
+                    <h4 class="page-head-line">Project Team</h4>
                         <div class="panel-body">
 
-
 <div id="step-2">
-            <h2 class="StepTitle">Project Team</h2>
+  
             <p>
-              <div id="client_div">
-              <label class="control-label col-md-24 col-sm-12 col-xs-12">Client</label>
-              <select id="client" class="form-control" required="">
-              <option value="">Select..</option>
-            </select>
 
-          </div>
-              <label class="control-label col-md-24 col-sm-12 col-xs-12" for="op-mgr">Operations Manager <span class="required">*</span>
+                 <div class="col-md-6 col-xs-12">
+                        <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        <div class="panel-body">
+
+             Operations Manager <span class="required">*</span>
               </label>
-              <select id="client" class="form-control" required="">
-              <option value="">Select..</option>
+      <div id="OM_div">
+              <select id="OM" class="form-control" required="">
+              <option value="none">Select..</option>
+
             </select>
+      </div>
             <br>
+      <div id="PI_div">
+          Project Engineer/Field Engineer <span class="required">*</span>
 
-            <label class="control-label col-md-24 col-sm-12 col-xs-12" for="proj-engr">Project Engineer/Field Engineer <span class="required">*</span>
-            </label>
-            <select id="client" class="form-control" required="">
-            <option value="">Select..</option>
+            <select id="PI" class="form-control" required="">
+            <option value="none">Select..</option>
           </select>
-          <br>
 
-           <label class="control-label col-md-24 col-sm-12 col-xs-12" for="mtrl-engr">Materials Engineer <span class="required">*</span>
-           </label>
-           <select id="client" class="form-control" required="">
-           <option value="">Select..</option>
+      </div>  
+          <br>
+      <div id="Materials_div">
+          Materials Engineer <span class="required">*</span>
+                     <select id="Materials" class="form-control" required="">
+           <option value="none">Select..</option>
          </select>
+
+      </div>
          <br>
 
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="foreman">Foreman <span class="required">*</span>
-          </label>
-          <select id="client" class="form-control" required="">
-          <option value="">Select..</option>
+      <div id="Foreman_div">
+          Foreman <span class="required">*</span>
+          <select id="Foreman" class="form-control" required="">
+          <option value="none">Select..</option>
         </select>
+      </div>
+
         <br>
 
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="wrh-in-charge">Warehouse-in-Charge <span class="required">*</span>
-          </label>
-          <select id="client" class="form-control" required="">
-          <option value="">Select..</option>
+      <div id="Warehouse_div">
+        Warehouse-in-Charge <span class="required">*</span>
+          <select id="Warehouse" class="form-control" required="">
+          <option value="none">Select..</option>
         </select>
+      </div>
+
+
         <br>
 
-          <label class="control-label col-md-24 col-sm-12 col-xs-12" for="eqpt-in-charge">Equipment-in-Charge <span class="required">*</span>
-          </label>
-          <select id="client" class="form-control" required="">
-          <option value="">Select..</option>
+      <div id="Equipment-in-Charge_div">
+        Equipment-in-Charge <span class="required">*</span>
+          
+          <select id="Equipment-in-Charge" class="form-control" required="">
+          <option value="none">Select..</option>
         </select>
-        <br>
+      </div>
 
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="safety-officer">Safety Officer <span class="required">*</span>
-        </label>
-        <select id="client" class="form-control" required="">
-        <option value="">Select..</option>
+        <br>
+        
+     <div id="Safety_div">
+        Safety Officer <span class="required">*</span>
+        <select id="Safety" class="form-control" required="">
+        <option value="none">Select..</option>
       </select>
+    </div>
+
       <br>
 
-        <label class="control-label col-md-24 col-sm-12 col-xs-12" for="timekeeper">Timekeeper <span class="required">*</span>
+   <div id="Timekeeper_div">
+        Timekeeper <span class="required">*</span>
         </label>
-        <select id="client" class="form-control" required="">
-        <option value="">Select..</option>
+        <select id="Timekeeper" class="form-control" required="">
+        <option value="none">Select..</option>
       </select>
+    </div>
 <br>
 
 
-            <div class="col-md-2 "><br><button id="btn_reset" class="btn btn-block btn-lg">Reset</button></div>
+           <div class="col-md-4" >  <br><button id="btn_reset" class="btn btn-block btn-primary btn-lg"">Reset</button></div>
 
             <div class="col-md-4" >  <br><button id="btn_save" class="btn btn-block btn-success btn-lg" onclick="saves1();">Next</button></div>
 
             </p>
 
-        </div>
-
-                    </div>
+            </div>
+            </div>
+            </div><!--second panel-->
+</div>
+            </div>
               </div>
               </div><!--//first panel body-->
 
 
- <script src="../../../controller/steps.js" type="text/javascript"></script>
+ <script src="../../../controller/steps-team.js" type="text/javascript"></script>
 <?php include("../../../view/master/design_end.html");//?>
 
 </body>

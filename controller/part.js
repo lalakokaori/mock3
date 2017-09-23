@@ -114,6 +114,20 @@ else
 		else
 			$('#f_personel_div').removeClass('has-error');
 
+		if($('#f_code').val()==''){
+			err = true;
+			$('#f_code_div').addClass('has-error');
+			}
+		else
+			$('#f_code_div').removeClass('has-error');
+
+		if($('#f_desc').val()==''){
+			err = true;
+			$('#f_desc_div').addClass('has-error');
+			}
+		else
+			$('#f_desc_div').removeClass('has-error');
+
 
 
 
